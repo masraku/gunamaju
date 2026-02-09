@@ -1,11 +1,11 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
 import ProductCard from "@/components/ProductCard";
 
-export default function KatalogPage() {
+function KatalogContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("kategori") || "all";
 
@@ -311,5 +311,28 @@ export default function KatalogPage() {
         }
       `}</style>
     </div>
+  );
+}
+
+// Loading fallback for Suspense
+function KatalogLoading() {
+  return (
+    <div
+      className="katalog-page"
+      style={{ minHeight: "100vh", background: "var(--background-alt)" }}
+    >
+      <div style={{ padding: "4rem 0", textAlign: "center" }}>
+        <p style={{ color: "var(--muted)" }}>Memuat katalog...</p>
+      </div>
+    </div>
+  );
+}
+
+// Main page component with Suspense wrapper
+export default function KatalogPage() {
+  return (
+    <Suspense fallback={<KatalogLoading />}>
+      <KatalogContent />
+    </Suspense>
   );
 }
