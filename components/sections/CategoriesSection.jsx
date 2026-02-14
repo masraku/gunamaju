@@ -9,12 +9,12 @@ export default function CategoriesSection() {
         <div className="section-title">
           <span className="badge">Kategori Produk</span>
           <h2>
-            Temukan Alat Kesehatan{" "}
+            Temukan Produk{" "}
             <span className="highlight-text">Sesuai Kebutuhan</span>
           </h2>
           <p>
-            Kami menyediakan berbagai kategori alat kesehatan untuk memenuhi
-            kebutuhan rumah sakit, klinik, maupun rumah tangga.
+            Kami menyediakan berbagai kategori produk mulai dari APD, alat
+            kesehatan, perlengkapan industri, hingga perlengkapan kantor.
           </p>
         </div>
 

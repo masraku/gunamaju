@@ -12,7 +12,8 @@ export const company = {
   
   social: {
     instagram: "https://instagram.com/gunamajubersama",
-    facebook: "https://facebook.com/gunamajubersama"
+    facebook: "https://facebook.com/gunamajubersama",
+    tokopedia: "https://www.tokopedia.com/mulia-berkat-alkesindo"
   },
   
   operationalHours: {

@@ -1,31 +1,38 @@
 export const categories = [
   {
-    id: "alat-diagnostik",
-    name: "Alat Diagnostik",
-    description: "Tensimeter, stetoskop, termometer, dan alat pemeriksaan lainnya",
+    id: "apd",
+    name: "APD",
+    description: "Masker, sarung tangan, dan alat pelindung diri lainnya",
+    icon: "🧤",
+    image: "/categories/apd.jpg"
+  },
+  {
+    id: "alkes",
+    name: "Alat Kesehatan",
+    description: "Thermometer, suction pump, underpad, dan peralatan medis",
     icon: "🩺",
-    image: "/categories/diagnostik.jpg"
+    image: "/categories/alkes.jpg"
   },
   {
-    id: "alat-terapi",
-    name: "Alat Terapi",
-    description: "Nebulizer, oksigen konsentrator, dan peralatan terapi",
-    icon: "💨",
-    image: "/categories/terapi.jpg"
+    id: "perlengkapan-industri",
+    name: "Perlengkapan Industri",
+    description: "Kabel, batu gerinda, plastigauge, dan perlengkapan industri lainnya",
+    icon: "🏭",
+    image: "/categories/industri.jpg"
   },
   {
-    id: "alat-bantu-jalan",
-    name: "Alat Bantu Jalan",
-    description: "Kursi roda, tongkat, walker, dan alat mobilitas",
-    icon: "🦽",
-    image: "/categories/mobilitas.jpg"
+    id: "perlengkapan-kantor",
+    name: "Perlengkapan Kantor",
+    description: "Glassboard, whiteboard, dan perlengkapan kantor lainnya",
+    icon: "🏢",
+    image: "/categories/kantor.jpg"
   },
   {
-    id: "peralatan-rumah-sakit",
-    name: "Peralatan Rumah Sakit",
-    description: "Ranjang pasien, kasur medis, dan perlengkapan rumah sakit",
-    icon: "🏥",
-    image: "/categories/hospital.jpg"
+    id: "perlengkapan-lainnya",
+    name: "Perlengkapan Lainnya",
+    description: "Baju cold storage, kaos kaki PDL, dan perlengkapan lainnya",
+    icon: "📦",
+    image: "/categories/lainnya.jpg"
   }
 ];
 
