@@ -3,7 +3,16 @@ import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
+import { company } from "@/data/company";
 import ProductCard from "@/components/ProductCard";
+import { Search, ClipboardList, SearchX } from "lucide-react";
+import * as LucideIcons from "lucide-react";
+
+const IconComponent = ({ name, size = 20 }) => {
+  const Icon = LucideIcons[name];
+  if (!Icon) return null;
+  return <Icon size={size} />;
+};
 
 function KatalogContent() {
   const searchParams = useSearchParams();
@@ -43,17 +52,7 @@ function KatalogContent() {
           <aside className="katalog-sidebar">
             {/* Search */}
             <div className="search-box">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
+              <Search size={20} className="text-muted" />
               <input
                 type="text"
                 placeholder="Cari produk..."
@@ -70,7 +69,9 @@ function KatalogContent() {
                   className={`filter-btn ${activeCategory === "all" ? "active" : ""}`}
                   onClick={() => setActiveCategory("all")}
                 >
-                  <span className="filter-icon">📋</span>
+                  <span className="filter-icon">
+                    <ClipboardList size={20} />
+                  </span>
                   Semua Produk
                   <span className="filter-count">{products.length}</span>
                 </button>
@@ -84,13 +85,35 @@ function KatalogContent() {
                       className={`filter-btn ${activeCategory === cat.id ? "active" : ""}`}
                       onClick={() => setActiveCategory(cat.id)}
                     >
-                      <span className="filter-icon">{cat.icon}</span>
+                      <span className="filter-icon">
+                        <IconComponent name={cat.icon} />
+                      </span>
                       {cat.name}
                       <span className="filter-count">{count}</span>
                     </button>
                   );
                 })}
               </div>
+            </div>
+
+            {/* Tokopedia Link */}
+            <div className="filter-section">
+              <h3>Marketplace</h3>
+              <a
+                href={company.social.tokopedia}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tokopedia-btn"
+              >
+                <span className="filter-icon">
+                  <LucideIcons.ShoppingBag size={20} />
+                </span>
+                Kunjungi Tokopedia
+                <LucideIcons.ExternalLink
+                  size={16}
+                  style={{ marginLeft: "auto" }}
+                />
+              </a>
             </div>
           </aside>
 
@@ -108,7 +131,9 @@ function KatalogContent() {
               </div>
             ) : (
               <div className="no-products">
-                <span className="no-products-icon">🔍</span>
+                <span className="no-products-icon">
+                  <SearchX size={64} />
+                </span>
                 <h3>Produk tidak ditemukan</h3>
                 <p>Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
               </div>
@@ -161,6 +186,29 @@ function KatalogContent() {
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
+          position: sticky;
+          top: 8rem; /* Adjust based on navbar height, typically ~80px-100px */
+          height: fit-content;
+          align-self: start;
+          max-height: calc(
+            100vh - 9rem
+          ); /* Prevent sidebar from going off-screen */
+          overflow-y: auto; /* Allow scrolling within sidebar if too tall */
+          padding-right: 4px; /* Space for scrollbar */
+        }
+
+        /* Custom scrollbar for sidebar */
+        .katalog-sidebar::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        .katalog-sidebar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .katalog-sidebar::-webkit-scrollbar-thumb {
+          background-color: var(--border);
+          border-radius: 4px;
         }
 
         .search-box {
@@ -308,6 +356,26 @@ function KatalogContent() {
 
         .no-products p {
           color: var(--muted);
+        }
+
+        .tokopedia-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          width: 100%;
+          padding: 0.75rem 1rem;
+          background: var(--primary); /* Unified Blue per user request */
+          color: white;
+          border-radius: 0.5rem;
+          font-size: 0.9375rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+
+        .tokopedia-btn:hover {
+          background: var(--primary-dark);
+          transform: translateY(-2px);
         }
       `}</style>
     </div>

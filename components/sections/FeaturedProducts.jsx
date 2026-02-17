@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
 import { getFeaturedProducts } from "@/data/products";
+import { company } from "@/data/company";
 import ProductCard from "@/components/ProductCard";
+import { ExternalLink } from "lucide-react";
 
 export default function FeaturedProducts() {
   const featuredProducts = getFeaturedProducts();
@@ -28,17 +30,16 @@ export default function FeaturedProducts() {
         <div className="view-all">
           <Link href="/katalog" className="btn btn-secondary">
             Lihat Semua Produk
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
           </Link>
+          <a
+            href={company.social.tokopedia}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            Lihat di Tokopedia
+            <ExternalLink size={20} />
+          </a>
         </div>
       </div>
 
@@ -72,7 +73,9 @@ export default function FeaturedProducts() {
         .view-all {
           display: flex;
           justify-content: center;
+          gap: 1rem;
           margin-top: 4rem;
+          flex-wrap: wrap;
         }
       `}</style>
     </section>

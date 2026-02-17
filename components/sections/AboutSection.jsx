@@ -1,7 +1,14 @@
 "use client";
 import { company } from "@/data/company";
+import * as LucideIcons from "lucide-react";
 
 export default function AboutSection() {
+  const IconComponent = ({ name }) => {
+    const Icon = LucideIcons[name];
+    if (!Icon) return null;
+    return <Icon size={40} />;
+  };
+
   return (
     <section className="about section" id="tentang">
       <div className="container">
@@ -17,7 +24,9 @@ export default function AboutSection() {
         <div className="features-grid">
           {company.features.map((feature, index) => (
             <div className="feature-card" key={index}>
-              <div className="feature-icon">{feature.icon}</div>
+              <div className="feature-icon">
+                <IconComponent name={feature.icon} />
+              </div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>

@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors - Healthcare Blue/Green Theme - Solid Colors */
+  /* Brand Colors - Healthcare Blue Theme - Solid Colors */
   --primary: #0891b2;
   --primary-dark: #0e7490;
   --primary-light: #22d3ee;
-  --secondary: #10b981;
-  --secondary-dark: #059669;
+  /* --secondary: #10b981; -- OLD GREEN */
+  --secondary: #0ea5e9; /* Sky Blue - Matches theme better */
+  --secondary-dark: #0284c7;
   --accent: #f97316;
   
   /* Neutral Colors */
@@ -85,16 +86,17 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
   color: white;
 }
 
+/* Unified Button Colors - Making WhatsApp Blue per user request */
 .btn-whatsapp {
-  background: #25D366;
+  background: var(--primary); /* Was #25D366 */
   color: white;
-  box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.2);
 }
 
 .btn-whatsapp:hover {
-  background: #128C7E;
+  background: var(--primary-dark); /* Was #128C7E */
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(8, 145, 178, 0.3);
 }
 
 /* Cards */
@@ -142,21 +144,21 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
   margin: 0 auto;
 }
 
-/* Floating WhatsApp Button */
+/* Floating WhatsApp Button - Blue per user request */
 .whatsapp-float {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   width: 60px;
   height: 60px;
-  background: #25D366;
+  background: var(--primary); /* Was #25D366 */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 2rem;
-  box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 10px 15px -3px rgba(8, 145, 178, 0.4);
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -164,8 +166,8 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
-  box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.5);
-  background: #128C7E;
+  box-shadow: 0 20px 25px -5px rgba(8, 145, 178, 0.5);
+  background: var(--primary-dark); /* Was #128C7E */
 }
 
 /* Animations */

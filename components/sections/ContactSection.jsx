@@ -73,10 +73,33 @@ export default function ContactSection() {
           </div>
 
           <div className="contact-map">
-            <div className="map-placeholder">
-              <div className="map-icon">🗺️</div>
-              <p>Lokasi Kami</p>
-              <span>{company.contact.address}</span>
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight="0"
+              marginWidth="0"
+              src="https://maps.google.com/maps?q=Mulia+Berkat+Alkesindo+Jl.+Inspeksi+Kali+Sunter+No.8&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              style={{ border: "none", minHeight: "450px" }}
+            ></iframe>
+            <div
+              style={{
+                padding: "1rem",
+                textAlign: "center",
+                background: "#f8fafc",
+              }}
+            >
+              <small>
+                <a
+                  href={company.contact.maps}
+                  target="_blank"
+                  className="view-map-link"
+                  rel="noopener noreferrer"
+                >
+                  Lihat Peta Lebih Besar
+                </a>
+              </small>
             </div>
           </div>
         </div>
@@ -166,36 +189,18 @@ export default function ContactSection() {
           overflow: hidden;
           min-height: 450px;
           border: 1px solid var(--border);
-        }
-
-        .map-placeholder {
-          height: 100%;
-          min-height: 450px;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 2rem;
         }
 
-        .map-icon {
-          font-size: 4rem;
-          margin-bottom: 1.5rem;
+        .view-map-link {
+          color: var(--primary);
+          text-decoration: none;
+          font-weight: 500;
         }
 
-        .map-placeholder p {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: var(--foreground);
-          margin-bottom: 0.75rem;
-        }
-
-        .map-placeholder span {
-          font-size: 1rem;
-          color: var(--muted);
-          max-width: 300px;
-          line-height: 1.6;
+        .view-map-link:hover {
+          text-decoration: underline;
         }
       `}</style>
     </section>

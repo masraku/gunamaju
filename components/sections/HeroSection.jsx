@@ -2,31 +2,32 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { company, getWhatsAppLink } from "@/data/company";
+import { ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
 
 const slides = [
   {
     id: 1,
     image: "/assets/hero-1.png",
-    badge: "Trusted Medical Distributor",
+    badge: "Resmi & Terpercaya (S-IPAK)",
     title: (
       <>
-        Solusi Lengkap <span className="highlight-text">Alat Kesehatan</span>{" "}
-        Berkualitas
+        Distributor <span className="highlight-text">Alat Kesehatan</span>{" "}
+        Terpercaya
       </>
     ),
-    desc: `${company.name} menyediakan berbagai alat kesehatan berstandar nasional dengan harga terjangkau. Melayani rumah sakit, klinik, dan kebutuhan kesehatan rumah tangga.`,
+    desc: `Mulia Berkat Alkesindo (MBA) menjunjung tinggi kejujuran dan kecepatan. Kami melayani pengiriman ke seluruh Indonesia dengan jaminan keamanan produk.`,
   },
   {
     id: 2,
     image: "/assets/hero-2.png",
-    badge: "Professional Partner",
+    badge: "Pelayanan Cepat & Jujur",
     title: (
       <>
-        Mitra Terpercaya <span className="highlight-text">Tenaga Medis</span>{" "}
+        Mitra Setia <span className="highlight-text">Tenaga Medis</span>{" "}
         Profesional
       </>
     ),
-    desc: "Mendukung pelayanan kesehatan terbaik dengan suplai peralatan medis modern dan layanan purna jual yang handal untuk fasilitas kesehatan Anda.",
+    desc: "Menyediakan produk 100% original dengan proses pemesanan yang mudah, cepat, dan transparan untuk kebutuhan medis Anda.",
   },
 ];
 
@@ -68,16 +69,7 @@ export default function HeroSection() {
           <div className="hero-cta animate-fadeInUp">
             <Link href="/katalog" className="btn btn-primary">
               Lihat Katalog
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <ArrowRight size={20} />
             </Link>
             <a
               href={getWhatsAppLink()}
@@ -86,21 +78,39 @@ export default function HeroSection() {
               className="btn btn-secondary"
             >
               Hubungi Kami
+              <MessageCircle size={20} />
+            </a>
+            <a
+              href={company.social.tokopedia}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-tokopedia"
+            >
+              Tokopedia
+              <ExternalLink size={20} />
             </a>
           </div>
 
           <div className="hero-stats animate-fadeInUp">
             <div className="stat">
-              <span className="stat-number">500+</span>
+              <span className="stat-number">80+</span>
               <span className="stat-label">Produk Tersedia</span>
             </div>
             <div className="stat">
               <span className="stat-number">1000+</span>
-              <span className="stat-label">Pelanggan Puas</span>
+              <span className="stat-label">Pengiriman Sukses</span>
             </div>
             <div className="stat">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Tahun Pengalaman</span>
+              <a
+                href="/assets/image/S-IPAK PT. MULIA BERKAT ALKESINDO.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="stat-link"
+                title="Lihat Izin S-IPAK"
+              >
+                <span className="stat-number">S-IPAK</span>
+                <span className="stat-label">Izin Resmi (Lihat PDF)</span>
+              </a>
             </div>
           </div>
         </div>
@@ -220,6 +230,13 @@ export default function HeroSection() {
           margin-bottom: 4rem;
         }
 
+        /* Ensure buttons display correctly with icons */
+        :global(.hero .btn) {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
         /* Updates for dark background compatibility */
         :global(.hero .btn-secondary) {
           background: rgba(255, 255, 255, 0.1);
@@ -231,6 +248,18 @@ export default function HeroSection() {
         :global(.hero .btn-secondary:hover) {
           background: white;
           color: var(--primary);
+        }
+
+        :global(.hero .btn-tokopedia) {
+          background: var(--primary); /* Unified Blue per user request */
+          color: white;
+          border: 1px solid rgba(8, 145, 178, 0.3);
+          backdrop-filter: blur(4px);
+        }
+
+        :global(.hero .btn-tokopedia:hover) {
+          background: var(--primary-dark);
+          transform: translateY(-2px);
         }
 
         .hero-stats {
@@ -265,6 +294,19 @@ export default function HeroSection() {
           .hero-stats {
             gap: 5rem;
           }
+        }
+
+        .stat-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          transition: transform 0.2s;
+        }
+
+        .stat-link:hover {
+          transform: scale(1.05);
+          text-decoration: underline;
+          text-underline-offset: 4px;
         }
       `}</style>
     </section>

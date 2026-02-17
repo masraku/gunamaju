@@ -1,6 +1,13 @@
 "use client";
 import Link from "next/link";
 import { categories } from "@/data/categories";
+import * as LucideIcons from "lucide-react";
+
+const IconComponent = ({ name, size = 40 }) => {
+  const Icon = LucideIcons[name];
+  if (!Icon) return null;
+  return <Icon size={size} strokeWidth={1.5} />;
+};
 
 export default function CategoriesSection() {
   return (
@@ -25,7 +32,9 @@ export default function CategoriesSection() {
               key={category.id}
               className="category-card"
             >
-              <div className="category-icon">{category.icon}</div>
+              <div className="category-icon">
+                <IconComponent name={category.icon} />
+              </div>
               <h3>{category.name}</h3>
               <p>{category.description}</p>
               <span className="category-link">
