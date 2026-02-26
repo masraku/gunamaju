@@ -569,6 +569,28 @@ export const products = [
     rating: 4.8,
     sold: "1rb+",
     tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/kaos-kaki-pdl-kaos-kaki-security-tni-polri"
+  },
+  // =============================================
+  // ALAT KESEHATAN & MEDIS
+  // =============================================
+  {
+    id: "46",
+    name: "Kasur Medis / Kasur Rumah Sakit",
+    category: "alkes",
+    price: 9500000,
+    image: "/products/Kasur1.jpeg",
+    images: [
+      "/products/Kasur1.jpeg",
+      "/products/Kasur2.jpeg",
+      "/products/Kasur3.jpeg",
+      "/products/Kasur4.jpeg",
+      "/products/Kasur5.jpeg"
+    ],
+    description: "Kasur medis berkualitas tinggi untuk kebutuhan rumah sakit, klinik, dan perawatan di rumah. Dilengkapi dengan rangka kokoh dan material yang nyaman untuk pasien.",
+    featured: true,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
   }
 ];
 
@@ -582,13 +604,31 @@ export const formatPrice = (price) => {
 };
 
 export const getProductsByCategory = (categorySlug) => {
-  return products.filter(p => p.category === categorySlug);
+  return productsWithSlugs.filter(p => p.category === categorySlug);
 };
 
 export const getFeaturedProducts = () => {
-  return products.filter(p => p.featured);
+  return productsWithSlugs.filter(p => p.featured);
 };
 
 export const getProductById = (id) => {
   return products.find(p => p.id === id);
+};
+
+// Helper function to generate slug from product name
+export const generateSlug = (name) => {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens
+    .replace(/(^-|-$)+/g, ''); // Remove leading or trailing hyphens
+};
+
+// Add slug to all products dynamically
+export const productsWithSlugs = products.map(product => ({
+  ...product,
+  slug: generateSlug(product.name)
+}));
+
+export const getProductBySlug = (slug) => {
+  return productsWithSlugs.find(p => p.slug === slug);
 };

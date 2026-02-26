@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { products } from "@/data/products";
+import { productsWithSlugs as products } from "@/data/products";
 import { categories } from "@/data/categories";
 import { company } from "@/data/company";
 import ProductCard from "@/components/ProductCard";

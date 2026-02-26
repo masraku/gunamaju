@@ -1,6 +1,16 @@
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  turbopack: {
+    root: __dirname,
+    resolveAlias: {
+      tailwindcss: resolve(__dirname, "node_modules/tailwindcss"),
+    },
+  },
 };
 
 export default nextConfig;

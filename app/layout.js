@@ -11,6 +11,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"),
   title: `${company.name} - Distributor Alat Kesehatan Terpercaya`,
   description: company.description,
   keywords: "alat kesehatan, alat medis, distributor alkes, kursi roda, tensimeter, nebulizer, alat terapi, alat diagnostik",

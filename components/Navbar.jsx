@@ -20,10 +20,10 @@ export default function Navbar() {
       if (pathname === "/") {
         const sections = [
           { id: "kontak", href: "/#kontak" },
-          { id: "featured", href: "/katalog" },
-          { id: "categories", href: "/katalog" },
           { id: "tentang", href: "/#tentang" },
-          { id: "hero", href: "/" }, // Default/Top
+          { id: "categories", href: "/#categories" },
+          { id: "featured", href: "/katalog" },
+          { id: "hero", href: "/#hero" }, // Default/Top
         ];
 
         // Find the first section that is visible (from bottom up)
@@ -52,8 +52,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/#hero", label: "Beranda" },
-    { href: "/#tentang", label: "Tentang" },
     { href: "/katalog", label: "Katalog" },
+    { href: "/#categories", label: "Kategori" },
+    { href: "/#tentang", label: "Tentang" },
     { href: "/#kontak", label: "Kontak" },
   ];
 

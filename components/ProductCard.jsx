@@ -6,9 +6,12 @@ import { getProductWhatsAppLink } from "@/data/company";
 import { ShoppingCart, MessageCircle, Star } from "lucide-react";
 
 export default function ProductCard({ product }) {
+  // Use slug if available, fallback to id
+  const productLink = `/produk/${product.slug || product.id}`;
+
   return (
     <div className="product-card">
-      <Link href={`/produk/${product.id}`} className="product-link">
+      <Link href={productLink} className="product-link">
         <div className="product-image">
           <img
             src={product.image}
@@ -23,7 +26,7 @@ export default function ProductCard({ product }) {
       </Link>
 
       <div className="product-info">
-        <Link href={`/produk/${product.id}`} className="product-title-link">
+        <Link href={productLink} className="product-title-link">
           <h3 className="product-name">{product.name}</h3>
         </Link>
         <p className="product-desc">{product.description}</p>
