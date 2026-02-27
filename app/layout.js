@@ -77,8 +77,7 @@ export const metadata = {
     },
   },
   verification: {
-    // Ganti dengan kode verifikasi Google Search Console kamu
-    // google: "KODE_VERIFIKASI_GOOGLE_SEARCH_CONSOLE",
+     google: "x9f-1PctQClZWQaLV-dBt5ddkEYl-lz-K4YmffY1-hc",
   },
 };
 
