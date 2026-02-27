@@ -9,8 +9,10 @@ import {
   ShieldCheck,
   Truck,
 } from "lucide-react";
-import { getWhatsAppLink } from "@/data/company";
+import { getWhatsAppLink, company } from "@/data/company";
 import ProductImageGallery from "@/components/ProductImageGallery";
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://muliaberkatalkes.com";
 
 export async function generateStaticParams() {
   return productsWithSlugs.map((product) => ({
@@ -29,10 +31,16 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${product.name} - Mulia Berkat Alkesindo`,
-    description: product.description.substring(0, 160),
+    title: `${product.name} - Jual Alat Kesehatan`,
+    description: `Beli ${product.name} original harga terbaik di ${company.name}. ${product.description.substring(0, 120)}`,
+    alternates: {
+      canonical: `/produk/${slug}`,
+    },
     openGraph: {
+      title: `${product.name} - ${company.name}`,
+      description: product.description.substring(0, 160),
       images: [product.image],
+      type: "website",
     },
   };
 }
