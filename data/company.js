@@ -14,7 +14,8 @@ export const company = {
   social: {
     instagram: "https://www.instagram.com/mulia_berkat_alkes/",
     facebook: "https://www.facebook.com/mulia.b.abadi?locale=id_ID",
-    tokopedia: "https://www.tokopedia.com/mulia-berkat-alkesindo"
+    tokopedia: "https://www.tokopedia.com/mulia-berkat-alkesindo",
+    tokopedia2: "https://www.tokopedia.com/jossfy"
   },
   
   operationalHours: {

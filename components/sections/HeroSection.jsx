@@ -86,7 +86,16 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               className="btn btn-tokopedia"
             >
-              Tokopedia
+              Tokopedia MBA
+              <ExternalLink size={20} />
+            </a>
+            <a
+              href={company.social.tokopedia2}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-tokopedia"
+            >
+              Tokopedia Joss Safety
               <ExternalLink size={20} />
             </a>
           </div>

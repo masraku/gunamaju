@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { company } from "@/data/company";
 import { categories } from "@/data/categories";
-import { Instagram, Facebook, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Instagram, Facebook, MapPin, Phone, Mail, Clock, ShoppingBag } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -39,6 +39,24 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
+              </a>
+              <a
+                href={company.social.tokopedia}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tokopedia MBA"
+                title="Tokopedia MBA"
+              >
+                <ShoppingBag size={20} />
+              </a>
+              <a
+                href={company.social.tokopedia2}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tokopedia Joss Safety"
+                title="Tokopedia Joss Safety"
+              >
+                <ShoppingBag size={20} />
               </a>
             </div>
           </div>
