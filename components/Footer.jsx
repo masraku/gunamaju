@@ -16,8 +16,8 @@ export default function Footer() {
               <Image
                 src="/assets/image/mba logo.png"
                 alt={company.name}
-                width={32}
-                height={32}
+                width={100}
+                height={100}
                 style={{ objectFit: "contain" }}
               />
               <span className="logo-text">{company.name}</span>

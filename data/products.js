@@ -575,7 +575,7 @@ export const products = [
   // =============================================
   {
     id: "46",
-    name: "Kasur Medis / Kasur Rumah Sakit",
+    name: "Transfer Bed IGD Kasur Medis Rumah Sakit",
     category: "alkes",
     price: 9500000,
     image: "/products/Kasur1.jpeg",
@@ -586,7 +586,7 @@ export const products = [
       "/products/Kasur4.jpeg",
       "/products/Kasur5.jpeg"
     ],
-    description: "Kasur medis berkualitas tinggi untuk kebutuhan rumah sakit, klinik, dan perawatan di rumah. Dilengkapi dengan rangka kokoh dan material yang nyaman untuk pasien.",
+    description: "Transfer bed IGD kasur medis rumah sakit. Kasur pasien dengan rangka stainless steel, roda karet, dan permukaan anti slip. Ideal untuk pemindahan pasien di ruang gawat darurat. Ready Stock Hubungi kami untuk informasi lebih lanjut.",
     featured: true,
     rating: null,
     sold: null,
