@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="footer-section">
             <div className="footer-logo">
               <Image
-                src="/assets/image/mba logo.png"
+                src="/assets/image/favicon.png"
                 alt={company.name}
                 width={100}
                 height={100}

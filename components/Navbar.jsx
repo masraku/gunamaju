@@ -91,7 +91,7 @@ export default function Navbar() {
           >
             <div className="logo-image-container">
               <Image
-                src="/assets/image/mba logo.png"
+                src="/assets/image/favicon.png"
                 alt={company.name}
                 width={64}
                 height={64}
