@@ -15,10 +15,15 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://muliaberkatalkes.co
 export const metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${company.name} - Distributor Alat Kesehatan Terpercaya`,
+    default: `${company.name} - Toko & Distributor Alat Kesehatan Kelapa Gading`,
     template: `%s | ${company.name}`,
   },
   description: company.description,
+  icons: {
+    icon: "/assets/image/favicon.png",
+    shortcut: "/assets/image/favicon.png",
+    apple: "/assets/image/favicon.png",
+  },
   keywords: [
     "mulia berkat alkes",
     "mulia berkat alkesindo",
@@ -40,6 +45,7 @@ export const metadata = {
     "alkes online",
     "alat kesehatan kelapa gading",
     "alat kesehatan jakarta utara",
+    "toko alat kesehatan kelapa gading",
   ],
   authors: [{ name: company.name }],
   creator: company.name,
@@ -53,7 +59,7 @@ export const metadata = {
     canonical: baseUrl,
   },
   openGraph: {
-    title: `${company.name} - Distributor Alat Kesehatan Terpercaya`,
+    title: `${company.name} - Toko & Distributor Alat Kesehatan Kelapa Gading`,
     description: company.description,
     url: baseUrl,
     siteName: company.name,
@@ -62,7 +68,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${company.name} - Distributor Alat Kesehatan Terpercaya`,
+    title: `${company.name} - Toko & Distributor Alat Kesehatan Kelapa Gading`,
     description: company.description,
   },
   robots: {
