@@ -4,15 +4,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { company } from "@/data/company";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://muliaberkatalkes.com";
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || "https://muliaberkatalkes.com";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -21,11 +22,7 @@ export const metadata = {
     template: `%s | ${company.name}`,
   },
   description: company.description,
-  icons: {
-    icon: "/assets/image/favicon.png",
-    shortcut: "/assets/image/favicon.png",
-    apple: "/assets/image/favicon.png",
-  },
+
   keywords: [
     "mulia berkat alkes",
     "mulia berkat alkesindo",
@@ -48,6 +45,10 @@ export const metadata = {
     "alat kesehatan kelapa gading",
     "alat kesehatan jakarta utara",
     "toko alat kesehatan kelapa gading",
+    "alkes kelapa gading",
+    "alkes jakarta utara",
+    "toko alkes kelapa gading",
+    "toko alkes jakarta utara",
   ],
   authors: [{ name: company.name }],
   creator: company.name,
@@ -85,7 +86,7 @@ export const metadata = {
     },
   },
   verification: {
-     google: "x9f-1PctQClZWQaLV-dBt5ddkEYl-lz-K4YmffY1-hc",
+    google: "x9f-1PctQClZWQaLV-dBt5ddkEYl-lz-K4YmffY1-hc",
   },
 };
 
@@ -101,7 +102,11 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
               name: company.name,
-              alternateName: ["Mulia Berkat Alkes", "MBA", "Mulia Berkat Alkesindo"],
+              alternateName: [
+                "Mulia Berkat Alkes",
+                "MBA",
+                "Mulia Berkat Alkesindo",
+              ],
               description: company.description,
               url: baseUrl,
               telephone: company.contact.phone,
@@ -122,7 +127,13 @@ export default function RootLayout({ children }) {
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
                   opens: "08:00",
                   closes: "17:00",
                 },

@@ -5,7 +5,7 @@ export const products = [
   {
     id: "1",
     name: "Masker Aura 3M 9320A+ Original Box Isi 20",
-    category: "apd",
+    category: "produk-3m",
     price: 415000,
     image: "/products/masker-aura-3m-9320a.jpg",
     description: "Masker Aura 3M tipe 9320A+ original, standar FFP2. Desain lipat datar yang nyaman dan mudah disimpan. Isi 20 pcs per box. Terlaris dengan 10.000+ terjual.",
@@ -17,7 +17,7 @@ export const products = [
   {
     id: "2",
     name: "Masker N95 3M 9502+ Per Box Isi 50 Original",
-    category: "apd",
+    category: "produk-3m",
     price: 450000,
     image: "/products/masker-3m-9502.jpg",
     description: "Masker N95 3M tipe 9502+ headband original. Perlindungan efektif terhadap partikel halus. Isi 50 pcs per box.",
@@ -29,7 +29,7 @@ export const products = [
   {
     id: "3",
     name: "Masker KN95 3M 9501+ Original Earloop Isi 50",
-    category: "apd",
+    category: "produk-3m",
     price: 10000,
     image: "/products/masker-3m-9501.jpg",
     description: "Masker KN95 3M tipe 9501+ dengan earloop, original. Dijual per pcs dari box isi 50 sachet. Nyaman dipakai sehari-hari.",
@@ -41,7 +41,7 @@ export const products = [
   {
     id: "4",
     name: "3M Masker N95 Type 8210 Original 1 Box Isi 20 Pcs",
-    category: "apd",
+    category: "produk-3m",
     price: 295000,
     image: "/products/masker-3m-8210.jpg",
     description: "Masker 3M N95 tipe 8210 original 100% produk resmi. Isi 1 box 20 pcs. ED 2029, stock terbaru. Cocok untuk lingkungan berdebu dan medis.",
@@ -53,7 +53,7 @@ export const products = [
   {
     id: "5",
     name: "3M Masker N95 VFlex 9105 Original 50 Pcs",
-    category: "apd",
+    category: "produk-3m",
     price: 525000,
     image: "/products/masker-3m-vflex-9105.jpg",
     description: "Masker 3M N95 VFlex 9105 original untuk medis dan safety. Isi 50 pcs. Respirator partikulat N95 dengan stiker imported by 3Indonesia. ED terbaru 2029.",
@@ -65,7 +65,7 @@ export const products = [
   {
     id: "6",
     name: "3M Masker Safety N95 Tipe 8515 untuk Welding 10 Pcs",
-    category: "apd",
+    category: "produk-3m",
     price: 725000,
     image: "/products/masker-3m-8515.jpg",
     description: "Masker safety 3M N95 tipe 8515 original, khusus untuk daerah berdebu dan berminyak. Cocok untuk pekerjaan welding/las. Isi 10 pcs.",
@@ -77,7 +77,7 @@ export const products = [
   {
     id: "7",
     name: "Masker Safety 3M 8511 N95 NIOSH",
-    category: "apd",
+    category: "produk-3m",
     price: 375000,
     image: "/products/masker-3m-8511.jpg",
     description: "Masker safety 3M tipe 8511 N95 tersertifikasi NIOSH. Dilengkapi katup (cool flow valve) untuk kenyamanan bernapas. Cocok untuk lingkungan kerja berdebu.",
@@ -89,7 +89,7 @@ export const products = [
   {
     id: "8",
     name: "Masker 8210V N95 3M",
-    category: "apd",
+    category: "produk-3m",
     price: 325000,
     image: "/products/masker-3m-8210v.jpg",
     description: "Masker 3M 8210V N95 dengan cool flow valve, mengurangi panas dan kelembaban di dalam masker. Ideal untuk pemakaian di lingkungan panas dan berdebu.",
@@ -101,7 +101,7 @@ export const products = [
   {
     id: "9",
     name: "Masker R95 N95 3M 8247",
-    category: "apd",
+    category: "produk-3m",
     price: 1100000,
     image: "/products/masker-3m-8247.jpg",
     description: "Masker 3M tipe 8247 R95/N95 dengan karbon aktif. Perlindungan terhadap partikel dan uap organik ringan. Kelas premium untuk kebutuhan khusus industri.",
@@ -113,7 +113,7 @@ export const products = [
   {
     id: "10",
     name: "Masker Aura 3M 9322A+",
-    category: "apd",
+    category: "produk-3m",
     price: 280000,
     image: "/products/masker-aura-3m-9322a.jpg",
     description: "Masker Aura 3M tipe 9322A+ dengan katup (valve). Desain 3 panel lipat yang ergonomis, memberikan kenyamanan ekstra saat digunakan dalam waktu lama.",
@@ -201,7 +201,7 @@ export const products = [
   {
     id: "17",
     name: "Hazmat APD Coverall 3M 4515/4510",
-    category: "apd",
+    category: "produk-3m",
     price: 120000,
     image: "/products/hazmat-3m-4515.jpg",
     description: "Baju hazmat APD coverall 3M tipe 4515/4510. Bahan non-woven breathable, melindungi dari partikel berbahaya. Ringan dan nyaman dipakai. Laris 2.000+ terjual.",
@@ -217,7 +217,7 @@ export const products = [
   {
     id: "18",
     name: "Safety Goggle Antifog 3M 334AF Original",
-    category: "apd",
+    category: "produk-3m",
     price: 100000,
     image: "/products/safety-goggle-3m-334af.jpg",
     description: "Kacamata safety goggle 3M tipe 334AF anti-fog original. Lensa jernih anti embun, bisa digunakan untuk keperluan medis maupun industri. Melindungi mata dari percikan dan debu.",
@@ -588,6 +588,223 @@ export const products = [
     ],
     description: "Transfer bed IGD kasur medis rumah sakit. Kasur pasien dengan rangka stainless steel, roda karet, dan permukaan anti slip. Ideal untuk pemindahan pasien di ruang gawat darurat. Ready Stock Hubungi kami untuk informasi lebih lanjut.",
     featured: true,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "47",
+    name: "Nova Test Alat Tes Narkoba 6 Parameter",
+    category: "alkes",
+    price: 45000,
+    image: "/products/NovaTest.jpeg",
+    images: [
+      "/products/NovaTest.jpeg",
+      "/products/NovaTest2.jpeg"
+    ],
+    description: "Alat tes narkoba Nova Test 6 parameter. Deteksi cepat dan akurat untuk berbagai jenis narkotika. Hasil dalam hitungan menit. Cocok untuk skrining di kantor, sekolah, dan institusi.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "48",
+    name: "Alkohol Swab OneMed Isi 100 Pcs",
+    category: "alkes",
+    price: 0,
+    image: "/products/OneMed oneswabs.jpeg",
+    description: "Alkohol swab merk OneMed isi 100 pcs per box. Tisu alkohol 70% isopropyl untuk desinfeksi kulit sebelum injeksi atau pengecekan gula darah.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "49",
+    name: "Benang Jahit Operasi Surgical Suture",
+    category: "alkes",
+    price: 0,
+    image: "/products/SurgicalSuture.jpeg",
+    images: [
+      "/products/SurgicalSuture.jpeg",
+      "/products/SurgicalSuture2.jpeg",
+      "/products/SurgicalSuture3.jpeg"
+    ],
+    description: "Benang jahit operasi (surgical suture) steril untuk keperluan medis. Berbagai ukuran tersedia. Kualitas standar rumah sakit.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "50",
+    name: "Blood Lancet Jarum Bekam Isi 100 Pcs",
+    category: "alkes",
+    price: 0,
+    image: "/products/blood lancets.jpeg",
+    description: "Blood lancet / jarum bekam steril isi 100 pcs. Untuk pengecekan gula darah, asam urat, kolesterol, dan terapi bekam. Sekali pakai, aman dan higienis.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "51",
+    name: "EasyTouch Strip Test Asam Urat Isi 25",
+    category: "alkes",
+    price: 0,
+    image: "/products/easytouch asamurat.jpeg",
+    description: "Strip test asam urat merk EasyTouch isi 25 pcs. Kompatibel dengan alat EasyTouch GCU. Hasil akurat dalam hitungan detik untuk monitoring kadar asam urat.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "52",
+    name: "EasyTouch Strip Test Kolesterol Isi 10",
+    category: "alkes",
+    price: 0,
+    image: "/products/easytouch kolestrol.jpeg",
+    images: [
+      "/products/easytouch kolestrol.jpeg",
+      "/products/easytouch kolestrol2.jpeg"
+    ],
+    description: "Strip test kolesterol merk EasyTouch isi 10 pcs. Kompatibel dengan alat EasyTouch GCU. Monitoring kadar kolesterol di rumah dengan mudah dan akurat.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "53",
+    name: "GlucoDr Alat Cek Gula Darah Set Lengkap",
+    category: "alkes",
+    price: 0,
+    image: "/products/glucoDr.jpeg",
+    images: [
+      "/products/glucoDr.jpeg",
+      "/products/glucoDr2.jpeg",
+      "/products/glucoDr3.jpeg"
+    ],
+    description: "Alat cek gula darah GlucoDr set lengkap dengan strip dan lancet. Hasil pengukuran cepat dan akurat. Ideal untuk penderita diabetes monitoring gula darah harian.",
+    featured: true,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "54",
+    name: "Thermometer Digital Krisbow",
+    category: "alkes",
+    price: 0,
+    image: "/products/krisbow thermo.jpeg",
+    images: [
+      "/products/krisbow thermo.jpeg",
+      "/products/krisbow thermo2.jpeg"
+    ],
+    description: "Thermometer digital merk Krisbow. Pengukuran suhu tubuh cepat dan akurat. Layar LCD mudah dibaca. Cocok untuk penggunaan rumah tangga dan klinik.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "55",
+    name: "Rapid Diagnostic Test Kit",
+    category: "alkes",
+    price: 0,
+    image: "/products/rapiddiagnostic.jpeg",
+    description: "Kit rapid diagnostic test untuk deteksi cepat berbagai penyakit. Hasil dalam hitungan menit. Akurat dan mudah digunakan.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "56",
+    name: "Safety Box Limbah Medis 5 Liter",
+    category: "alkes",
+    price: 0,
+    image: "/products/safetybox1.jpeg",
+    images: [
+      "/products/safetybox1.jpeg",
+      "/products/safetybox2.jpeg"
+    ],
+    description: "Safety box untuk pembuangan limbah medis tajam (jarum, lancet, dll). Kapasitas 5 liter. Aman, anti bocor, dan sesuai standar kesehatan.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "57",
+    name: "Benang Silk Braided Surgical Suture",
+    category: "alkes",
+    price: 0,
+    image: "/products/silk braided.jpeg",
+    description: "Benang jahit operasi silk braided (sutra kepang) steril. Non-absorbable, kekuatan tinggi. Untuk berbagai prosedur bedah.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "58",
+    name: "Vacuum Blood Collection Tube EDTA",
+    category: "alkes",
+    price: 0,
+    image: "/products/vacuum bloods.jpeg",
+    images: [
+      "/products/vacuum bloods.jpeg",
+      "/products/vacuum bloods2.jpeg",
+      "/products/vacuum bloods3.jpeg",
+      "/products/vacuum bloods4.jpeg"
+    ],
+    description: "Tabung vakum pengambilan darah (vacuum blood tube) dengan antikoagulan EDTA. Untuk pemeriksaan darah lengkap di laboratorium. Berbagai ukuran tersedia.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "59",
+    name: "Vacuum Blood Collection Tube Gel & Clot Activator",
+    category: "alkes",
+    price: 0,
+    image: "/products/vacuum gel.jpeg",
+    images: [
+      "/products/vacuum gel.jpeg",
+      "/products/vacuum gel2.jpeg",
+      "/products/vacuum gel3.jpeg"
+    ],
+    description: "Tabung vakum pengambilan darah dengan gel separator dan clot activator. Untuk pemeriksaan serum kimia darah. Berbagai ukuran tersedia.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "60",
+    name: "Safeticet Lancet Safety",
+    category: "alkes",
+    price: 0,
+    image: "/products/safeticet1.jpeg",
+    description: "Safeticet lancet safety untuk pengambilan sampel darah. Desain safety retractable, sekali pakai. Mengurangi risiko tertusuk jarum setelah penggunaan.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: ""
+  },
+  {
+    id: "61",
+    name: "Sarung Tangan Listrik Elsec 20kV",
+    category: "alkes",
+    price: 1000000,
+    image: "/products/sarung tangan listrik.jpeg",
+    description: "Sarung tangan listrik Elsec 20kV untuk perlindungan saat bekerja dengan peralatan listrik. Tahan terhadap tegangan tinggi dan memberikan perlindungan maksimal.",
+    featured: false,
     rating: null,
     sold: null,
     tokopediaUrl: ""

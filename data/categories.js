@@ -1,5 +1,12 @@
 export const categories = [
   {
+    id: "produk-3m",
+    name: "Produk 3M",
+    description: "Masker N95, respirator, coverall, dan perlengkapan safety 3M original",
+    icon: "BadgeCheck",
+    image: "/categories/3m.jpg"
+  },
+  {
     id: "apd",
     name: "APD",
     description: "Masker, sarung tangan, dan alat pelindung diri lainnya",

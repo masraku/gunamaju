@@ -1,7 +1,7 @@
 export const company = {
   name: "Mulia Berkat Alkesindo",
   tagline: "Distributor Alat Kesehatan Terpercaya, Jujur, dan Cepat",
-  description: "Mulia Berkat Alkesindo (MBA) adalah distributor alat kesehatan terpercaya yang telah memiliki izin S-IPAK. Kami berkomitmen menyediakan produk berkualitas dengan pelayanan yang jujur, cepat, dan pengiriman ke seluruh Indonesia.",
+  description: "Mulia Berkat Alkesindo (MBA) adalah toko dan distributor alat kesehatan terlengkap dan terpercaya di Kelapa Gading, Jakarta Utara yang telah memiliki izin S-IPAK. Kami berkomitmen menyediakan produk medis berkualitas dengan pelayanan jujur, cepat, dan pengiriman ke seluruh Indonesia.",
   
   contact: {
     whatsapp: "+6281319235451",

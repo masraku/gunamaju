@@ -11,11 +11,11 @@ const slides = [
     badge: "Resmi & Terpercaya (S-IPAK)",
     title: (
       <>
-        Distributor <span className="highlight-text">Alat Kesehatan</span>{" "}
-        Terpercaya
+        Distributor <span className="highlight-text">Alat Kesehatan</span> di
+        Kelapa Gading
       </>
     ),
-    desc: `Mulia Berkat Alkesindo (MBA) menjunjung tinggi kejujuran dan kecepatan. Kami melayani pengiriman ke seluruh Indonesia dengan jaminan keamanan produk.`,
+    desc: `Mulia Berkat Alkesindo (MBA) adalah toko alat kesehatan terpercaya di Jakarta Utara. Kami melayani pengiriman ke seluruh Indonesia dengan cepat & aman.`,
   },
   {
     id: 2,
