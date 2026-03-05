@@ -21,7 +21,16 @@ export const metadata = {
     default: `${company.name} - Toko & Distributor Alat Kesehatan Kelapa Gading`,
     template: `%s | ${company.name}`,
   },
-  description: company.description,
+  description: "Mulia Berkat Alkesindo (MBA) adalah toko dan distributor alat kesehatan terlengkap dan terpercaya di Kelapa Gading, Jakarta Utara yang telah memiliki izin S-IPAK. Kami berkomitmen menyediakan produk medis berkualitas dengan pelayanan jujur, cepat, dan pengiriman ke seluruh Indonesia.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 
   keywords: [
     "mulia berkat alkes",
