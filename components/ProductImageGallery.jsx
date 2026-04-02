@@ -8,9 +8,9 @@ export default function ProductImageGallery({ images, productName }) {
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-4 sticky top-24">
+    <div className="flex flex-col gap-4">
       {/* Main Image */}
-      <div className="relative w-full aspect-square bg-white rounded-2xl overflow-hidden flex items-center justify-center border border-slate-100 shadow-sm">
+      <div className="relative w-full aspect-square bg-white rounded-2xl overflow-hidden flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm">
         <Image
           src={images[selectedIndex]}
           alt={`${productName} - Foto ${selectedIndex + 1}`}

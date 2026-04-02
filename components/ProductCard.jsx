@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
-import { formatPrice } from "@/data/products";
 import { getCategoryName } from "@/data/categories";
 import { getProductWhatsAppLink } from "@/data/company";
-import { ShoppingCart, MessageCircle, Star } from "lucide-react";
+import { ShoppingCart, MessageCircle, Star, Tag } from "lucide-react";
 
 export default function ProductCard({ product }) {
   // Use slug if available, fallback to id
@@ -43,8 +42,16 @@ export default function ProductCard({ product }) {
             )}
           </div>
         )}
+
+        {/* Promo Banner */}
+        <div className="promo-banner">
+          <div className="promo-text">
+            <Tag size={14} />
+            <span>Harga Lebih Murah Offline!</span>
+          </div>
+        </div>
+
         <div className="product-footer">
-          <span className="product-price">{formatPrice(product.price)}</span>
           <div className="product-actions">
             {product.tokopediaUrl && (
               <a
@@ -55,17 +62,17 @@ export default function ProductCard({ product }) {
                 title="Beli di Tokopedia"
               >
                 <ShoppingCart size={16} />
-                Beli
+                Tokopedia
               </a>
             )}
             <a
               href={getProductWhatsAppLink(product.name)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-order"
+              className="btn-whatsapp"
             >
               <MessageCircle size={16} />
-              Tanya
+              Chat Harga
             </a>
           </div>
         </div>
@@ -184,33 +191,49 @@ export default function ProductCard({ product }) {
           color: var(--muted);
         }
 
+        /* Promo Banner */
+        .promo-banner {
+          background: linear-gradient(135deg, #fef3c7, #fde68a);
+          border: 1px solid #f59e0b;
+          border-radius: 0.625rem;
+          padding: 0.625rem 0.875rem;
+          margin-bottom: 1rem;
+        }
+
+        .promo-text {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.8125rem;
+          font-weight: 700;
+          color: #92400e;
+        }
+
         .product-footer {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: center;
           gap: 0.75rem;
           margin-top: auto;
           flex-wrap: wrap;
-        }
-
-        .product-price {
-          font-size: 1.125rem;
-          font-weight: 700;
-          color: var(--primary);
         }
 
         .product-actions {
           display: flex;
           align-items: center;
           gap: 0.5rem;
+          width: 100%;
         }
 
         .btn-tokopedia {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 0.375rem;
-          padding: 0.625rem 1rem;
-          background: var(--primary); /* Unified Blue */
+          flex: 1 1 0;
+          white-space: nowrap;
+          padding: 0.625rem 0.5rem; /* slightly less horizontal padding to prevent overflow */
+          background: var(--primary);
           color: white;
           border-radius: 9999px;
           font-size: 0.8125rem;
@@ -225,12 +248,15 @@ export default function ProductCard({ product }) {
           box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.3);
         }
 
-        .btn-order {
+        .btn-whatsapp {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 0.375rem;
-          padding: 0.625rem 1rem;
-          background: var(--primary); /* Unified Blue */
+          flex: 1 1 0;
+          white-space: nowrap;
+          padding: 0.625rem 0.5rem;
+          background: #25d366;
           color: white;
           border-radius: 9999px;
           font-size: 0.8125rem;
@@ -239,10 +265,10 @@ export default function ProductCard({ product }) {
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .btn-order:hover {
-          background: var(--primary-dark);
+        .btn-whatsapp:hover {
+          background: #1fb855;
           transform: translateY(-2px);
-          box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.3);
+          box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.3);
         }
       `}</style>
     </div>
