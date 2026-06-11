@@ -98,6 +98,24 @@ export default function HeroSection() {
               Tokopedia Joss Safety
               <ExternalLink size={20} />
             </a>
+            <a
+              href={company.social.shopee}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-shopee"
+            >
+              Shopee MBA
+              <ExternalLink size={20} />
+            </a>
+            <a
+              href={company.social.shopee2}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-shopee"
+            >
+              Shopee MBA 2
+              <ExternalLink size={20} />
+            </a>
           </div>
 
           <div className="hero-stats animate-fadeInUp">
@@ -268,6 +286,18 @@ export default function HeroSection() {
 
         :global(.hero .btn-tokopedia:hover) {
           background: var(--primary-dark);
+          transform: translateY(-2px);
+        }
+
+        :global(.hero .btn-shopee) {
+          background: #EE4D2D;
+          color: white;
+          border: 1px solid rgba(238, 77, 45, 0.3);
+          backdrop-filter: blur(4px);
+        }
+
+        :global(.hero .btn-shopee:hover) {
+          background: #D73211;
           transform: translateY(-2px);
         }
 

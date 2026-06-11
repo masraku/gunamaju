@@ -58,6 +58,26 @@ export default function Footer() {
               >
                 <ShoppingBag size={20} />
               </a>
+              <a
+                href={company.social.shopee}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shopee MBA"
+                title="Shopee MBA"
+                className="shopee-link"
+              >
+                <ShoppingBag size={20} />
+              </a>
+              <a
+                href={company.social.shopee2}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shopee MBA 2"
+                title="Shopee MBA 2"
+                className="shopee-link"
+              >
+                <ShoppingBag size={20} />
+              </a>
             </div>
           </div>
 
@@ -252,6 +272,10 @@ export default function Footer() {
         .social-links a:hover {
           background: var(--primary);
           transform: translateY(-3px);
+        }
+
+        .social-links a.shopee-link:hover {
+          background: #EE4D2D;
         }
 
         .footer-links {

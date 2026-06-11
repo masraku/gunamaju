@@ -6,7 +6,7 @@ export const company = {
   contact: {
     whatsapp: "+6281319235451",
     phone: "+62 813-1923-5451",
-    email: "muliaberkat@gmail.com",
+    email: "muliaberkat2@gmail.com",
     address: "9, Jl. Inspeksi Kali Sunter No.8, RT.9/RW.4, Klp. Gading Bar., Kec. Klp. Gading, Jkt Utara, Daerah Khusus Ibukota Jakarta 14240",
     maps: "https://maps.app.goo.gl/Ff4ZzLsQpknF7WjR9"
   },
@@ -15,7 +15,9 @@ export const company = {
     instagram: "https://www.instagram.com/mulia_berkat_alkes/",
     facebook: "https://www.facebook.com/mulia.b.abadi?locale=id_ID",
     tokopedia: "https://www.tokopedia.com/mulia-berkat-alkesindo",
-    tokopedia2: "https://www.tokopedia.com/jossfy"
+    tokopedia2: "https://www.tokopedia.com/jossfy",
+    // shopee: "https://shopee.co.id/muliaberkatalkesindo",
+    // shopee2: "https://shopee.co.id/muliaberkatalkesindo2"
   },
   
   operationalHours: {
