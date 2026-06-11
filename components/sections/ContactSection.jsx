@@ -38,7 +38,11 @@ export default function ContactSection() {
                 <div className="contact-icon">✉️</div>
                 <div>
                   <h4>Email</h4>
-                  <p>{company.contact.email}</p>
+                  <p>
+                    <a href={`mailto:${company.contact.email}`} target="_blank" rel="noopener noreferrer">
+                      {company.contact.email}
+                    </a>
+                  </p>
                 </div>
               </div>
 
