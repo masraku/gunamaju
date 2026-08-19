@@ -1,0 +1,152 @@
+.footer {
+  background: #0f172a;
+  color: white;
+  padding: 5rem 0 0;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+}
+
+@media (min-width: 640px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr 1.5fr;
+    gap: 2rem;
+  }
+}
+
+.footerSection h4 {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 700;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.logoText {
+  color: white;
+}
+
+.footerDesc {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s;
+}
+
+.socialLinks a:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+.shopeeLink:hover {
+  background: #EE4D2D !important;
+}
+
+.footerLinks {
+  list-style: none;
+}
+
+.footerLinks li {
+  margin-bottom: 0.75rem;
+}
+
+.footerLinks a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footerLinks a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+.footerContact {
+  list-style: none;
+}
+
+.footerContact li {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+  font-size: 0.9375rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerBottom {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.contactLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contactLink:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.viewMapLink {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.viewMapLink:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.mapContainer {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}

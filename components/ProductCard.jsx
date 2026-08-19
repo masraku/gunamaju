@@ -3,62 +3,63 @@ import Link from "next/link";
 import { getCategoryName } from "@/data/categories";
 import { getProductWhatsAppLink } from "@/data/company";
 import { ShoppingCart, MessageCircle, Star, Tag } from "lucide-react";
+import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ product }) {
   // Use slug if available, fallback to id
   const productLink = `/produk/${product.slug || product.id}`;
 
   return (
-    <div className="product-card">
-      <Link href={productLink} className="product-link">
-        <div className="product-image">
+    <div className={styles.productCard}>
+      <Link href={productLink} className={styles.productLink}>
+        <div className={styles.productImage}>
           <img
             src={product.image}
             alt={product.name}
-            className="product-img"
+            className={styles.productImg}
             loading="lazy"
           />
-          <span className="product-category">
+          <span className={styles.productCategory}>
             {getCategoryName(product.category)}
           </span>
         </div>
       </Link>
 
-      <div className="product-info">
-        <Link href={productLink} className="product-title-link">
-          <h3 className="product-name">{product.name}</h3>
+      <div className={styles.productInfo}>
+        <Link href={productLink} className={styles.productTitleLink}>
+          <h3 className={styles.productName}>{product.name}</h3>
         </Link>
-        <p className="product-desc">{product.description}</p>
+        <p className={styles.productDesc}>{product.description}</p>
         {(product.rating || product.sold) && (
-          <div className="product-meta">
+          <div className={styles.productMeta}>
             {product.rating && (
-              <span className="product-rating">
+              <span className={styles.productRating}>
                 <Star size={14} fill="#f59e0b" color="#f59e0b" />
                 {product.rating}
               </span>
             )}
             {product.sold && (
-              <span className="product-sold">{product.sold} terjual</span>
+              <span className={styles.productSold}>{product.sold} terjual</span>
             )}
           </div>
         )}
 
         {/* Promo Banner */}
-        <div className="promo-banner">
-          <div className="promo-text">
+        <div className={styles.promoBanner}>
+          <div className={styles.promoText}>
             <Tag size={14} />
             <span>Harga Lebih Murah Offline!</span>
           </div>
         </div>
 
-        <div className="product-footer">
-          <div className="product-actions">
+        <div className={styles.productFooter}>
+          <div className={styles.productActions}>
             {product.tokopediaUrl && (
               <a
                 href={product.tokopediaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-tokopedia"
+                className={styles.btnTokopedia}
                 title="Beli di Tokopedia"
               >
                 <ShoppingCart size={16} />
@@ -69,7 +70,7 @@ export default function ProductCard({ product }) {
               href={getProductWhatsAppLink(product.name)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-whatsapp"
+              className={styles.btnWhatsapp}
             >
               <MessageCircle size={16} />
               Chat Harga
@@ -77,200 +78,6 @@ export default function ProductCard({ product }) {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .product-card {
-          background: white;
-          border-radius: 1.25rem;
-          overflow: hidden;
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          border: 1px solid var(--border);
-          display: flex;
-          flex-direction: column;
-        }
-
-        .product-card:hover {
-          transform: translateY(-5px);
-          box-shadow:
-            0 20px 25px -5px rgba(0, 0, 0, 0.1),
-            0 10px 10px -5px rgba(0, 0, 0, 0.04);
-          border-color: var(--primary-light);
-        }
-
-        .product-link,
-        .product-title-link {
-          text-decoration: none;
-          color: inherit;
-        }
-
-        .product-image {
-          position: relative;
-          aspect-ratio: 1/1;
-          background: var(--background-alt);
-          overflow: hidden;
-        }
-
-        .product-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .product-img {
-          transform: scale(1.05);
-        }
-
-        .product-category {
-          position: absolute;
-          top: 1rem;
-          left: 1rem;
-          padding: 0.375rem 0.875rem;
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(4px);
-          border-radius: 9999px;
-          font-size: 0.75rem;
-          font-weight: 600;
-          color: var(--primary);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .product-info {
-          padding: 1.5rem;
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-        }
-
-        .product-name {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: var(--foreground);
-          margin-bottom: 0.75rem;
-          line-height: 1.4;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          transition: color 0.2s;
-        }
-
-        .product-title-link:hover .product-name {
-          color: var(--primary);
-        }
-
-        .product-desc {
-          font-size: 0.875rem;
-          color: var(--muted);
-          line-height: 1.6;
-          margin-bottom: 0.75rem;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        .product-meta {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 1rem;
-          font-size: 0.8125rem;
-        }
-
-        .product-rating {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.25rem;
-          color: var(--foreground);
-          font-weight: 600;
-        }
-
-        .product-sold {
-          color: var(--muted);
-        }
-
-        /* Promo Banner */
-        .promo-banner {
-          background: linear-gradient(135deg, #fef3c7, #fde68a);
-          border: 1px solid #f59e0b;
-          border-radius: 0.625rem;
-          padding: 0.625rem 0.875rem;
-          margin-bottom: 1rem;
-        }
-
-        .promo-text {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.8125rem;
-          font-weight: 700;
-          color: #92400e;
-        }
-
-        .product-footer {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.75rem;
-          margin-top: auto;
-          flex-wrap: wrap;
-        }
-
-        .product-actions {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          width: 100%;
-        }
-
-        .btn-tokopedia {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.375rem;
-          flex: 1 1 0;
-          white-space: nowrap;
-          padding: 0.625rem 0.5rem; /* slightly less horizontal padding to prevent overflow */
-          background: var(--primary);
-          color: white;
-          border-radius: 9999px;
-          font-size: 0.8125rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-tokopedia:hover {
-          background: var(--primary-dark);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.3);
-        }
-
-        .btn-whatsapp {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.375rem;
-          flex: 1 1 0;
-          white-space: nowrap;
-          padding: 0.625rem 0.5rem;
-          background: #25d366;
-          color: white;
-          border-radius: 9999px;
-          font-size: 0.8125rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-whatsapp:hover {
-          background: #1fb855;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.3);
-        }
-      `}</style>
     </div>
   );
 }

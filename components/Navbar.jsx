@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { company, getWhatsAppLink } from "@/data/company";
 import { Menu, X, MessageCircle } from "lucide-react";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,22 +75,14 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className="container">
-        <div className="navbar-inner">
+        <div className={styles.navbarInner}>
           <Link
             href="/"
-            className="logo"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              gap: "1rem",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
+            className={styles.logo}
           >
-            <div className="logo-image-container">
+            <div className={styles.logoImageContainer}>
               <Image
                 src="/assets/image/favicon.png"
                 alt={company.name}
@@ -99,10 +92,10 @@ export default function Navbar() {
                 style={{ objectFit: "contain", width: "auto", height: "64px" }}
               />
             </div>
-            <span className="logo-text">{company.name}</span>
+            <span className={styles.logoText}>{company.name}</span>
           </Link>
 
-          <nav className="nav-desktop">
+          <nav className={styles.navDesktop}>
             {navLinks.map((link) => {
               // Fix for smooth scrolling: Use simple hash anchor if on homepage
               const href =
@@ -114,7 +107,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={href}
-                  className={`nav-link ${isActive(link.href) ? "active" : ""}`}
+                  className={`${styles.navLink} ${isActive(link.href) ? styles.navLinkActive : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -124,7 +117,7 @@ export default function Navbar() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp btn-sm"
+              className={`btn btn-whatsapp ${styles.btnSm}`}
             >
               <MessageCircle size={20} />
               Hubungi Kami
@@ -132,7 +125,7 @@ export default function Navbar() {
           </nav>
 
           <button
-            className="mobile-menu-btn"
+            className={styles.mobileMenuBtn}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -140,7 +133,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <nav className={`nav-mobile ${isOpen ? "open" : ""}`}>
+        <nav className={`${styles.navMobile} ${isOpen ? styles.navMobileOpen : ""}`}>
           {navLinks.map((link) => {
             const href =
               pathname === "/" && link.href.startsWith("/#")
@@ -151,7 +144,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={href}
-                className={`nav-link ${isActive(link.href) ? "active" : ""}`}
+                className={`${styles.navLink} ${isActive(link.href) ? styles.navLinkActive : ""}`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -162,7 +155,7 @@ export default function Navbar() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-whatsapp"
+            className={`btn btn-whatsapp ${styles.navMobileWhatsapp}`}
             onClick={() => setIsOpen(false)}
           >
             <MessageCircle size={20} />
@@ -170,175 +163,6 @@ export default function Navbar() {
           </a>
         </nav>
       </div>
-
-      <style jsx>{`
-        .navbar {
-          position: sticky;
-          top: 0;
-          z-index: 100;
-          background: rgba(255, 255, 255, 0.8);
-          backdrop-filter: blur(12px);
-          border-bottom: 1px solid transparent;
-          transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-          background: rgba(255, 255, 255, 0.95);
-          border-bottom: 1px solid var(--border);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .navbar-inner {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 80px;
-          transition: height 0.3s ease;
-        }
-
-        .navbar.scrolled .navbar-inner {
-          height: 70px;
-        }
-
-        /* Logo styles */
-        .logo {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 1rem;
-          text-decoration: none;
-          font-weight: 800;
-          font-size: 1.35rem;
-          color: var(--primary);
-          white-space: nowrap; /* Prevent text wrapping */
-        }
-
-        .logo-image-container {
-          display: flex;
-          align-items: center;
-          flex-shrink: 0; /* Prevent logo from shrinking */
-        }
-
-        .logo-text {
-          color: var(--primary);
-          display: inline-block;
-        }
-
-        .nav-desktop {
-          display: none;
-          align-items: center;
-          gap: 2.5rem;
-        }
-
-        @media (min-width: 768px) {
-          .nav-desktop {
-            display: flex;
-          }
-        }
-
-        /* Use global selector for Next.js Link components */
-        .navbar :global(.nav-link) {
-          text-decoration: none;
-          color: var(--muted);
-          font-weight: 500;
-          transition: all 0.3s ease;
-          position: relative;
-          padding: 0.5rem 0;
-        }
-
-        .navbar :global(.nav-link:hover) {
-          color: var(--primary);
-        }
-
-        .navbar :global(.nav-link.active) {
-          color: var(--primary);
-          font-weight: 600;
-        }
-
-        .navbar :global(.nav-link::after) {
-          content: "";
-          position: absolute;
-          bottom: 0px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: var(--primary);
-          transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          border-radius: 9999px;
-        }
-
-        .navbar :global(.nav-link:hover::after),
-        .navbar :global(.nav-link.active::after) {
-          width: 100%;
-        }
-
-        .btn-sm {
-          padding: 0.625rem 1.25rem;
-          font-size: 0.875rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0.5rem;
-          color: var(--foreground);
-        }
-
-        @media (min-width: 768px) {
-          .mobile-menu-btn {
-            display: none;
-          }
-        }
-
-        /* Hamburger styles removed as we use Lucide icons now */
-
-        .nav-mobile {
-          display: none;
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 1.5rem 0;
-          border-top: 1px solid var(--border);
-        }
-
-        .nav-mobile.open {
-          display: flex;
-        }
-
-        .nav-mobile :global(.nav-link) {
-          padding: 0.75rem 1rem;
-          border-radius: 0.5rem;
-          display: block;
-        }
-
-        .nav-mobile :global(.nav-link:hover),
-        .nav-mobile :global(.nav-link.active) {
-          background: var(--background-alt);
-        }
-
-        /* Hide underline in mobile menu */
-        .nav-mobile :global(.nav-link::after) {
-          display: none;
-        }
-
-        .nav-mobile .btn-whatsapp {
-          margin-top: 1rem;
-          justify-content: center;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        @media (min-width: 768px) {
-          .nav-mobile {
-            display: none !important;
-          }
-        }
-      `}</style>
     </header>
   );
 }

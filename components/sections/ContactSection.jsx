@@ -1,41 +1,41 @@
-"use client";
 import { company, getWhatsAppLink } from "@/data/company";
+import styles from "./ContactSection.module.css";
 
 export default function ContactSection() {
   return (
-    <section className="contact section" id="kontak">
+    <section className={`${styles.contact} section`} id="kontak">
       <div className="container">
-        <div className="contact-wrapper">
-          <div className="contact-info">
+        <div className={styles.contactWrapper}>
+          <div className={styles.contactInfo}>
             <span className="badge">Hubungi Kami</span>
             <h2>
               Ada Pertanyaan?{" "}
-              <span className="highlight-text">Tanyakan Kami!</span>
+              <span className={styles.highlightText}>Tanyakan Kami!</span>
             </h2>
-            <p>
+            <p className={styles.contactInfoDesc}>
               Tim kami siap membantu Anda memilih produk yang tepat. Konsultasi
               gratis!
             </p>
 
-            <div className="contact-details">
-              <div className="contact-item">
-                <div className="contact-icon">📍</div>
+            <div className={styles.contactDetails}>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>📍</div>
                 <div>
                   <h4>Alamat</h4>
                   <p>{company.contact.address}</p>
                 </div>
               </div>
 
-              <div className="contact-item">
-                <div className="contact-icon">📞</div>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>📞</div>
                 <div>
                   <h4>Telepon</h4>
                   <p>{company.contact.phone}</p>
                 </div>
               </div>
 
-              <div className="contact-item">
-                <div className="contact-icon">✉️</div>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>✉️</div>
                 <div>
                   <h4>Email</h4>
                   <p>
@@ -46,8 +46,8 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="contact-item">
-                <div className="contact-icon">🕐</div>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>🕐</div>
                 <div>
                   <h4>Jam Operasional</h4>
                   <p>{company.operationalHours.weekdays}</p>
@@ -62,7 +62,7 @@ export default function ContactSection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp btn-lg"
+              className={`btn btn-whatsapp ${styles.btnLg}`}
             >
               <svg
                 width="24"
@@ -76,7 +76,7 @@ export default function ContactSection() {
             </a>
           </div>
 
-          <div className="contact-map">
+          <div className={styles.contactMap}>
             <iframe
               width="100%"
               height="100%"
@@ -98,7 +98,7 @@ export default function ContactSection() {
                 <a
                   href={company.contact.maps}
                   target="_blank"
-                  className="view-map-link"
+                  className={styles.viewMapLink}
                   rel="noopener noreferrer"
                 >
                   Lihat Peta Lebih Besar
@@ -108,105 +108,6 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .contact {
-          background: white;
-        }
-
-        .highlight-text {
-          color: var(--primary);
-        }
-
-        .contact-wrapper {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 4rem;
-          align-items: center;
-        }
-
-        @media (min-width: 1024px) {
-          .contact-wrapper {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-
-        .contact-info h2 {
-          font-size: 2.25rem;
-          margin-bottom: 1rem;
-          margin-top: 1rem;
-        }
-
-        .contact-info > p {
-          color: var(--muted);
-          margin-bottom: 2.5rem;
-          font-size: 1.125rem;
-        }
-
-        .contact-details {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          margin-bottom: 2.5rem;
-        }
-
-        .contact-item {
-          display: flex;
-          gap: 1.25rem;
-          align-items: flex-start;
-        }
-
-        .contact-icon {
-          width: 50px;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: var(--background-alt);
-          border-radius: 1rem;
-          font-size: 1.5rem;
-          flex-shrink: 0;
-          color: var(--primary);
-        }
-
-        .contact-item h4 {
-          font-size: 1rem;
-          margin-bottom: 0.25rem;
-          color: var(--foreground);
-          font-weight: 700;
-        }
-
-        .contact-item p {
-          font-size: 1rem;
-          color: var(--muted);
-          line-height: 1.6;
-        }
-
-        .btn-lg {
-          padding: 1rem 2rem;
-          font-size: 1.0625rem;
-        }
-
-        .contact-map {
-          background: var(--background-alt);
-          border-radius: 2rem;
-          overflow: hidden;
-          min-height: 450px;
-          border: 1px solid var(--border);
-          display: flex;
-          flex-direction: column;
-        }
-
-        .view-map-link {
-          color: var(--primary);
-          text-decoration: none;
-          font-weight: 500;
-        }
-
-        .view-map-link:hover {
-          text-decoration: underline;
-        }
-      `}</style>
     </section>
   );
 }
