@@ -367,7 +367,7 @@ export default async function ProductPage({ params }) {
                   <ChevronRight size={16} />
                 </Link>
               </div>
-              <div className="grid grid-cols-1 min-[560px]:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
                 {relatedProducts.map((p) => (
                   <ProductCard key={p.id} product={p} />
                 ))}

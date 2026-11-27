@@ -10,8 +10,13 @@
   min-width: 0;
 }
 
+@media (hover: hover) {
+  .productCard:hover {
+    transform: translateY(-5px);
+  }
+}
+
 .productCard:hover {
-  transform: translateY(-5px);
   box-shadow:
     0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -214,4 +219,73 @@
 .btnShopee:hover {
   background: #d73211;
   transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------
+   Compact card: applies whenever the CARD itself is narrow (e.g. the
+   2-column grid on phones), regardless of which page it is on.
+   ------------------------------------------------------------------ */
+.productCard {
+  container-type: inline-size;
+}
+
+@container (max-width: 260px) {
+  .productInfo {
+    padding: 0.75rem;
+  }
+
+  .productCategory {
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.625rem;
+  }
+
+  .productName {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    margin-bottom: 0.375rem;
+  }
+
+  .productDesc {
+    display: none;
+  }
+
+  .productMeta {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .promoBanner {
+    padding: 0.375rem 0.5rem;
+    margin-bottom: 0.625rem;
+    border-radius: 0.5rem;
+  }
+
+  .promoText {
+    gap: 0.25rem;
+    font-size: 0.6875rem;
+  }
+
+  .promoText svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  .productActions {
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .btnTokopedia,
+  .btnWhatsapp,
+  .btnShopee {
+    flex: none;
+    width: 100%;
+    min-height: 34px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
 }

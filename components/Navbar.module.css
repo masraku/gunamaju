@@ -61,6 +61,18 @@
   white-space: nowrap;
 }
 
+/* Very narrow phones (iPhone SE etc.): keep the full name visible */
+@media (max-width: 359px) {
+  .logo {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .logoImage {
+    height: 36px;
+  }
+}
+
 @media (min-width: 400px) {
   .logo {
     font-size: 1.15rem;
