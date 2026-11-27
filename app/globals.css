@@ -18,39 +18,60 @@
   --border: #e2e8f0;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/*
+ * Base styles live in @layer base so Tailwind utilities (p-6, mt-4, text-3xl, ...)
+ * used on the product page can still override them. Unlayered rules always beat
+ * layered ones, which previously zeroed every Tailwind padding/margin utility.
+ */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for sticky navbar */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  img,
+  iframe,
+  video {
+    max-width: 100%;
+  }
+
+  /* Add spacing between Navbar and page content */
+  main {
+    padding-top: 1.5rem;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+  h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Offset for sticky navbar */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
-
-body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--background);
-  color: var(--foreground);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* Add spacing between Navbar and page content */
-main {
-  padding-top: 1.5rem;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
 
 /* Buttons */
 .btn {
@@ -125,17 +146,33 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 
 /* Section */
 .section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 4rem;
+  }
 }
 
 .section-title h2 {
@@ -167,6 +204,15 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    bottom: 1rem;
+    right: 1rem;
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .whatsapp-float:hover {

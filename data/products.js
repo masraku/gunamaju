@@ -1,3 +1,7 @@
+// Product fields:
+//   tokopediaUrl / shopeeUrl (optional) — link to the marketplace listing.
+//   Leave empty ("") to hide that button. Prices are NOT shown on the site;
+//   customers ask via WhatsApp or see the marketplace listing.
 export const products = [
   // =============================================
   // MASKER & RESPIRATOR (APD)
@@ -12,7 +16,7 @@ export const products = [
     featured: true,
     rating: 5.0,
     sold: "10rb+",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-aura-3m-9320a-original-box-isi-20-4813e"
+    tokopediaUrl: "https://www.tokopedia.com/jossfy/masker-3m-aura-9320-p2-original"
   },
   {
     id: "2",
@@ -25,18 +29,6 @@ export const products = [
     rating: 5.0,
     sold: "100+",
     tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-n95-3m-9502-per-box-isi-50-original"
-  },
-  {
-    id: "3",
-    name: "Masker KN95 3M 9501+ Original Earloop Isi 50",
-    category: "produk-3m",
-    price: 10000,
-    image: "/products/masker-3m-9501.jpg",
-    description: "Masker KN95 3M tipe 9501+ dengan earloop, original. Dijual per pcs dari box isi 50 sachet. Nyaman dipakai sehari-hari.",
-    featured: false,
-    rating: 5.0,
-    sold: "100+",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-kn95-3m-9501-original-earloop-isi-50-sachet-per-pcs-ed1b7"
   },
   {
     id: "4",
@@ -60,7 +52,7 @@ export const products = [
     featured: true,
     rating: 5.0,
     sold: "1rb+",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/3m-masker-n95-untuk-medis-dan-safety-vflex-9105-original-terbaru-2029-50-pcs-respirator-partikulat-n95-dengan-stiker-imported-by-3indonesia-1731421861432362869"
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-9105-vflex-1-box-isi-50-original-dan-resmj-3m-17377658594433125"
   },
   {
     id: "6",
@@ -111,54 +103,6 @@ export const products = [
     tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-r95-n95-3m-8247"
   },
   {
-    id: "10",
-    name: "Masker Aura 3M 9322A+",
-    category: "produk-3m",
-    price: 280000,
-    image: "/products/masker-aura-3m-9322a.jpg",
-    description: "Masker Aura 3M tipe 9322A+ dengan katup (valve). Desain 3 panel lipat yang ergonomis, memberikan kenyamanan ekstra saat digunakan dalam waktu lama.",
-    featured: false,
-    rating: 5.0,
-    sold: "11",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-aura-3m-9322a"
-  },
-  {
-    id: "11",
-    name: "Masker Sensi KN95 Isi 20",
-    category: "apd",
-    price: 118000,
-    image: "/products/masker-sensi-kn95.jpg",
-    description: "Masker Sensi KN95 5 layer proteksi, isi 20 pcs per box. Efektif menyaring partikel hingga 95%. Nyaman untuk digunakan sehari-hari.",
-    featured: false,
-    rating: 5.0,
-    sold: "80+",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-kn95-isi-20"
-  },
-  {
-    id: "12",
-    name: "Masker Sensi Duckbill Isi 50",
-    category: "apd",
-    price: 133000,
-    image: "/products/masker-sensi-duckbill.jpg",
-    description: "Masker Sensi model duckbill 3D, isi 50 pcs per box. Bentuk duckbill memberikan ruang bernapas lebih lega dan tidak menempel di bibir.",
-    featured: true,
-    rating: 5.0,
-    sold: "250+",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-duckbill-isi-50"
-  },
-  {
-    id: "13",
-    name: "Masker Sensi 3 Ply Warna Hijau Isi 50 per Box",
-    category: "apd",
-    price: 55000,
-    image: "/products/masker-sensi-3ply.jpg",
-    description: "Masker Sensi 3 ply earloop warna hijau, isi 50 pcs per box. Masker medis standar untuk perlindungan harian dari debu dan droplet.",
-    featured: false,
-    rating: null,
-    sold: "1",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-3-ply-warna-hijau-isi-50-per-box-1731584260160522101"
-  },
-  {
     id: "14",
     name: "Masker Sensi Convex Kids Isi 25 Pcs",
     category: "apd",
@@ -168,7 +112,7 @@ export const products = [
     featured: false,
     rating: 5.0,
     sold: null,
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-convex-kids-isi-25pcs-dewasa"
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-convex-kids-isi-25pcs-1737429110036399989"
   },
   {
     id: "15",
@@ -324,7 +268,7 @@ export const products = [
     featured: false,
     rating: null,
     sold: null,
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/multipurpose-glove-rubberex-size-m-1731639790162380661"
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/multipurpose-glove-rubberex-size-m-1731639790162380661-1735656181737621365"
   },
   {
     id: "27",
@@ -342,18 +286,6 @@ export const products = [
   // =============================================
   // ALAT KESEHATAN & MEDIS
   // =============================================
-  {
-    id: "28",
-    name: "Alkohol Swab Sensi @100 Pcs per Box",
-    category: "alkes",
-    price: 12500,
-    image: "/products/alkohol-swab-sensi.jpg",
-    description: "Alkohol swab merk Sensi isi 100 pcs per box. Tisu alkohol 70% isopropyl untuk desinfeksi kulit sebelum injeksi atau pengecekan gula darah.",
-    featured: true,
-    rating: 5.0,
-    sold: "100+",
-    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/alkohol-swab-sensi-100pcs-per-box"
-  },
   {
     id: "29",
     name: "Thermometer Gun KF10 LunaLife",
@@ -572,6 +504,10 @@ export const products = [
   },
   // =============================================
   // ALAT KESEHATAN & MEDIS
+  // =============================================,
+
+  // =============================================
+  // DIJUAL OFFLINE (tanpa listing Tokopedia) — pesan via WhatsApp
   // =============================================
   {
     id: "46",
@@ -808,6 +744,592 @@ export const products = [
     rating: null,
     sold: null,
     tokopediaUrl: ""
+  },
+
+  // =============================================
+  // PRODUK BARU DARI TOKOPEDIA (sinkron 2026-11-27)
+  // =============================================
+  {
+    id: "62",
+    name: "Masker Anak 3 Ply",
+    category: "apd",
+    price: 30000,
+    image: "/products/masker-anak-3-ply.jpg",
+    description: "Masker anak 3 lapis (3 ply) dengan desain khusus ukuran anak. Nyaman dipakai untuk perlindungan sehari-hari.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-anak-3-ply-1737390773956085621"
+  },
+  {
+    id: "63",
+    name: "Filter 3M 3701CN Box Isi 100 Pcs",
+    category: "produk-3m",
+    price: 290000,
+    image: "/products/filter-3m-3701cn-box-isi-100-pcs.jpg",
+    description: "Filter partikulat 3M 3701CN sebagai filter pengganti untuk respirator half-mask 3M seri 3000, seperti 3M 3200. Isi 100 pcs per box.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-filter-3701cn-3m-1-box-100-pcs-1734949520532539253"
+  },
+  {
+    id: "64",
+    name: "Kstrong AFZ150100 Trauma Suspension Strap",
+    category: "perlengkapan-industri",
+    price: 450000,
+    image: "/products/kstrong-afz150100-trauma-suspension-strap.jpg",
+    description: "Tali trauma (trauma suspension strap) Kstrong AFZ150100 untuk full body harness. Memungkinkan pekerja yang tergantung setelah jatuh untuk berdiri di tali dan mengurangi tekanan. Dipasang pada harness dengan loop tekstil dan Velcro, panjang dapat disesuaikan. Bahan polyester dengan kekuatan putus 200 kgf.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/kstrong-afz150100-trauma-supension-strap-1731648934870222709"
+  },
+  {
+    id: "65",
+    name: "Floor Outlet BOSS Stop Kontak Lantai Stainless Steel",
+    category: "perlengkapan-industri",
+    price: 600000,
+    image: "/products/floor-outlet-boss-stop-kontak-lantai-stainless-steel.jpg",
+    description: "Stop kontak lantai (floor outlet) merek BOSS berbahan stainless steel. Produk buatan Indonesia yang sesuai standar.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/floor-outlet-boss-stop-kontak-lantai-stainless-steel-1731532909393971061"
+  },
+  {
+    id: "66",
+    name: "Sarung Tangan Latex Shamrock Powder Free Isi 100",
+    category: "apd",
+    price: 55000,
+    image: "/products/sarung-tangan-latex-shamrock-powder-free-isi-100.jpg",
+    description: "Sarung tangan pemeriksaan (examination gloves) latex Shamrock tanpa bedak (powder free), non steril, untuk penggunaan medis. Tersedia ukuran S, M, dan L. Isi 100 pcs.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/shamrock-sarung-tangan-latex-premium-medis-non-steril-tanpa-bubuk-size-s-m-l-100-pcs-untuk-penggunaan-medis-1731519643906770805"
+  },
+  {
+    id: "67",
+    name: "Sarung Tangan Nitrile Medis Isi 100",
+    category: "apd",
+    price: 80000,
+    image: "/products/sarung-tangan-nitrile-medis-isi-100.jpg",
+    description: "Handscoon nitrile sekali pakai tanpa bedak dan bebas latex, aman untuk pengguna yang alergi latex. Elastis dan tidak mudah sobek. Isi 100 pcs.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/handscun-medis-sarung-tangan-nitrile-1731519806172923765"
+  },
+  {
+    id: "68",
+    name: "3M Aura 9332+ Masker Respirator FFP3",
+    category: "produk-3m",
+    price: 35000,
+    image: "/products/3m-aura-9332-masker-respirator-ffp3.jpg",
+    description: "Respirator sekali pakai lipat datar 3M Aura 9332+ standar FFP3/P3. Perlindungan terhadap debu halus, kabut, dan asap logam. Filter dengan resistansi napas rendah, desain 3 panel yang mengikuti gerakan wajah, dan panel hidung yang lebih cocok dipakai bersama kacamata.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-respirator-sekali-pakai-3m-aura-9332-ffp3-p3-1731488006411487093"
+  },
+  {
+    id: "69",
+    name: "Sella Smico SM999CA Transfer Stretcher",
+    category: "alkes",
+    price: 8999000,
+    image: "/products/sella-smico-sm999ca-transfer-stretcher.jpg",
+    description: "Brankar transfer pasien Sella Smico SM999-CA untuk rumah sakit dan IGD. Rangka baja dan plastik ABS yang mudah disterilkan, roda dengan 2 pengunci, sandaran kepala dapat diatur, serta dilengkapi strap dan tiang infus.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/sella-smico-tranfer-strecher-emergency-bed-sm999ca-1731487935132239733"
+  },
+  {
+    id: "70",
+    name: "SAM Splint 36 Inch (91,4 cm) Bidai Gulung",
+    category: "alkes",
+    price: 625000,
+    image: "/products/sam-splint-36-inch-91-4-cm-bidai-gulung.jpg",
+    description: "Bidai gulung SAM Splint original buatan USA ukuran 36 inch (91,4 cm) untuk pertolongan pertama pada cedera dan patah tulang.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/sam-splint-usa-36-inch-91-4-cm-bidai-roll-usa-sam-splint-taper-patah-tulang-1731471974783682421"
+  },
+  {
+    id: "71",
+    name: "Oximeter Bayi dan Anak Yonker YK-820",
+    category: "alkes",
+    price: 4350000,
+    image: "/products/oximeter-bayi-dan-anak-yonker-yk-820.jpg",
+    description: "Pulse oximeter Yonker YK-820 untuk bayi, anak, dan dewasa. Sudah termasuk 3 kabel probe ukuran bayi, anak, dan dewasa.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/oxymeter-bayi-dan-anak-yonker-yk-820-1731143382830712145"
+  },
+  {
+    id: "72",
+    name: "Timbangan Badan Digital SECA 787 + 401",
+    category: "alkes",
+    price: 42500000,
+    image: "/products/timbangan-badan-digital-seca-787-401.jpg",
+    description: "Timbangan badan digital model tiang (column scale) SECA 787. Kapasitas 250 kg dengan ketelitian 100 g, BMI otomatis, auto hold, auto off, dan pilihan satuan kg/lbs. Menggunakan 6 baterai AA atau adaptor (opsional).",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/column-scales-seca-787-401-1731051406651655505"
+  },
+  {
+    id: "73",
+    name: "Industrial Plug & Socket 5 Pin 63A IP67 FORT",
+    category: "perlengkapan-industri",
+    price: 575000,
+    image: "/products/industrial-plug-socket-5-pin-63a-ip67-fort.jpg",
+    description: "Industrial plug & socket tipe surface mounting 5 pin 63A dengan proteksi IP67, merek FORT.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/industrial-plug-dan-socket-5-pin-63a-ip-67-1731003256271439185"
+  },
+  {
+    id: "74",
+    name: "Tiang Infus Kaki 5 Lunalife",
+    category: "alkes",
+    price: 325000,
+    image: "/products/tiang-infus-kaki-5-lunalife.jpg",
+    description: "Tiang infus merek Lunalife dengan 5 kaki.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/tiang-infuse-kaki-5-lunalife-1730981187097625937"
+  },
+  {
+    id: "75",
+    name: "Sound Level Meter Digital Sanfix WT85B",
+    category: "perlengkapan-industri",
+    price: 515000,
+    image: "/products/sound-level-meter-digital-sanfix-wt85b.jpg",
+    description: "Alat ukur kebisingan (sound level meter) digital Sanfix WT85B versi Bluetooth dengan aplikasi. Ringkas dan portabel, untuk pengukuran kebisingan di bidang teknik, quality control, K3, dan lingkungan.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/digital-sound-level-meter-sanfix-wt85b-wt-85-b-1730931883328243025"
+  },
+  {
+    id: "76",
+    name: "Hazmat Coverall Lunalife + Shoes Cover",
+    category: "apd",
+    price: 20000,
+    image: "/products/hazmat-coverall-lunalife-shoes-cover.jpg",
+    description: "Baju hazmat (coverall) merek Lunalife, all size hingga XL, bonus shoes cover. Memiliki izin edar Kemenkes.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/hazmat-coverall-lunalife-all-size-up-to-xl-with-shoes-cover-1730926311413941585"
+  },
+  {
+    id: "77",
+    name: "Masker Oksigen Dewasa Sella",
+    category: "alkes",
+    price: 10000,
+    image: "/products/masker-oksigen-dewasa-sella.jpg",
+    description: "Masker oksigen (oxygen mask) dewasa merek Sella, dapat digunakan untuk terapi oksigen maupun nebulizer.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-oksigen-oxygen-mask-dewasa-nebulizer-mask"
+  },
+  {
+    id: "78",
+    name: "Sarung Tangan Ansell AlphaTec Solvex 37-176",
+    category: "apd",
+    price: 40000,
+    image: "/products/sarung-tangan-ansell-alphatec-solvex-37-176.jpg",
+    description: "Sarung tangan kerja nitrile Ansell AlphaTec Solvex 37-176 untuk perlindungan tangan dari bahan kimia saat bekerja.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/safety-glove-alphatec-solvex-ansell-37-176-9-l-13514"
+  },
+  {
+    id: "79",
+    name: "Tensimeter Digital Lotus",
+    category: "alkes",
+    price: 250000,
+    image: "/products/tensimeter-digital-lotus.jpg",
+    description: "Tensimeter (alat ukur tekanan darah) digital merek Lotus untuk pemakaian di rumah maupun klinik.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/tensi-meter-digital-lotus"
+  },
+  {
+    id: "80",
+    name: "Tensimeter Digital Omron HEM-8712",
+    category: "alkes",
+    price: 545000,
+    image: "/products/tensimeter-digital-omron-hem-8712.jpg",
+    description: "Tensimeter digital Omron HEM-8712 untuk mengukur tekanan darah di lengan atas secara otomatis.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/tensi-meter-digital-omron-8712"
+  },
+  {
+    id: "81",
+    name: "Tabung Oksigen Medis 1 m³ + Isi",
+    category: "alkes",
+    price: 525000,
+    image: "/products/tabung-oksigen-medis-1-m-isi.jpg",
+    description: "Tabung oksigen medis ukuran 1 m³, sudah termasuk isi.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/tabung-1m3-plus-isi-tabung-isi"
+  },
+  {
+    id: "82",
+    name: "Masker KN95 Isi 10 Pcs",
+    category: "apd",
+    price: 20000,
+    image: "/products/masker-kn95-isi-10-pcs.jpg",
+    description: "Masker KN95 isi 10 pcs, praktis dan hemat untuk perlindungan sehari-hari.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-kn95-murah-isi-10-pcs"
+  },
+  {
+    id: "83",
+    name: "Sarung Tangan Latex Handseal",
+    category: "apd",
+    price: 99000,
+    image: "/products/sarung-tangan-latex-handseal.jpg",
+    description: "Sarung tangan latex merek Handseal untuk keperluan medis dan pemeriksaan.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/sarung-tangan-latex-handseal-xs"
+  },
+  {
+    id: "84",
+    name: "Sarung Tangan Nitrile Handseal Non Powder",
+    category: "apd",
+    price: 95000,
+    image: "/products/sarung-tangan-nitrile-handseal-non-powder.jpg",
+    description: "Sarung tangan nitrile merek Handseal tanpa bedak (non powder).",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/sarung-tangan-nitrile-non-powder-handseal-xs"
+  },
+  {
+    id: "85",
+    name: "Paket Tabung Oksigen Medis 1 m³ Lengkap",
+    category: "alkes",
+    price: 600000,
+    image: "/products/paket-tabung-oksigen-medis-1-m-lengkap.jpg",
+    description: "1 set terdiri dari tabung oksigen 1 m³ sudah termasuk isi, 1 unit regulator, dan 1 unit troli.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/paket-tabung-medis-tanpa-troli"
+  },
+  {
+    id: "86",
+    name: "Thermometer Gun Lotus BK8005",
+    category: "alkes",
+    price: 175000,
+    image: "/products/thermometer-gun-lotus-bk8005.jpg",
+    description: "Termometer inframerah non-kontak Lotus BK8005 model baru, garansi 1 tahun. Cukup arahkan ke dahi dari jarak 5–15 cm untuk mengukur suhu tubuh dengan cepat. Cocok untuk anak dan balita.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/termometer-gun-lotus-thermometer-bk8005"
+  },
+  {
+    id: "87",
+    name: "Johnson J-80 Disinfektan Food Grade",
+    category: "perlengkapan-lainnya",
+    price: 125000,
+    image: "/products/johnson-j-80-disinfektan-food-grade.jpg",
+    description: "Disinfektan dan sanitizer Johnson J-80 food grade dengan bahan aktif Benzalkonium Chloride 2,58%. Bersertifikat halal MUI dan terdaftar di Kemenkes RI (PKD 20502310170).",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/johnson-j-80-sanitizer-disinfectant-40l-foodgrade"
+  },
+  {
+    id: "88",
+    name: "Sarung Tangan Ansell TouchNTuff 92-600 Nitrile",
+    category: "apd",
+    price: 250000,
+    image: "/products/sarung-tangan-ansell-touchntuff-92-600-nitrile.jpg",
+    description: "Sarung tangan nitrile (NBR) Ansell TouchNTuff tipe 92-600.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/touchntuff-nbr-nitrile-glove-brand-ansell-m-b10e7"
+  },
+  {
+    id: "89",
+    name: "Sarung Tangan Super Nitrile Rubberex RNF15",
+    category: "apd",
+    price: 30000,
+    image: "/products/sarung-tangan-super-nitrile-rubberex-rnf15.jpg",
+    description: "Sarung tangan nitrile Rubberex RNF 15 dengan lapisan dalam flocklined yang nyaman dan mengurangi keletihan jari. Tahan pelarut, minyak, dan lemak. Panjang ±330 mm, tebal ±0,40 mm, warna hijau, ukuran S–XXXL.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/sarung-tangan-super-nitrile-rubberex-rnf15-1735755095941416821"
+  },
+  {
+    id: "90",
+    name: "Thermometer Gun Lotus 85",
+    category: "alkes",
+    price: 175000,
+    image: "/products/thermometer-gun-lotus-85.jpg",
+    description: "Termometer inframerah Lotus 85 original dan bergaransi.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/thermometer-gun-lotus-85-termometer-lotus85"
+  },
+  {
+    id: "91",
+    name: "Pulse Oximeter General Care",
+    category: "alkes",
+    price: 240000,
+    image: "/products/pulse-oximeter-general-care.jpg",
+    description: "Finger pulse oximeter merek General Care original untuk mengukur saturasi oksigen (SpO2) dan denyut nadi melalui ujung jari.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/finger-pulse-oxymeter-general-care-original"
+  },
+  {
+    id: "92",
+    name: "Surgical Gown Steril Premium",
+    category: "apd",
+    price: 20000,
+    image: "/products/surgical-gown-steril-premium.jpg",
+    description: "Baju operasi (surgical gown) steril premium berbahan spunlace berkualitas tinggi.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/surgical-gown-premium-steril-baju-operasi-steril"
+  },
+  {
+    id: "93",
+    name: "Thermometer Digital Anak Avico Ujung Fleksibel",
+    category: "alkes",
+    price: 40000,
+    image: "/products/thermometer-digital-anak-avico-ujung-fleksibel.jpg",
+    description: "Termometer digital merek Avico dengan ujung fleksibel yang nyaman untuk anak. Memiliki izin Kemenkes.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/thermometer-digital-anak-avico-ujung-flexible"
+  },
+  {
+    id: "94",
+    name: "Bearing NTN 6024",
+    category: "perlengkapan-industri",
+    price: 765000,
+    image: "/products/bearing-ntn-6024.jpg",
+    description: "Bearing (laher) NTN tipe 6024 untuk kebutuhan mesin dan industri.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/bearing-6024-ntn"
+  },
+  {
+    id: "95",
+    name: "Mata Gergaji Bosch T125XF",
+    category: "perlengkapan-industri",
+    price: 45000,
+    image: "/products/mata-gergaji-bosch-t125xf.jpg",
+    description: "Mata gergaji Bosch tipe T125XF.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/mata-gergaji-bosch-t125xf"
+  },
+  {
+    id: "96",
+    name: "Sounding Tape Richter 20 m Bandul Stainless",
+    category: "perlengkapan-industri",
+    price: 800000,
+    image: "/products/sounding-tape-richter-20-m-bandul-stainless.jpg",
+    description: "Meteran sounding tape merek Richter panjang 20 m dengan bandul stainless steel, untuk mengukur kedalaman cairan di tangki atau sumur.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/sounding-tape-richter-20m-bandul-ss"
+  },
+  {
+    id: "97",
+    name: "Tozen Flex Flexible Joint Single 2 Inch",
+    category: "perlengkapan-industri",
+    price: 520000,
+    image: "/products/tozen-flex-flexible-joint-single-2-inch.jpg",
+    description: "Flexible joint Tozen Flex tipe single ukuran 2 inch untuk sistem perpipaan.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/tozen-flex-flexible-joint-tozen-single-2-inch"
+  },
+  {
+    id: "98",
+    name: "Kaos Kaki Loreng Harpist",
+    category: "perlengkapan-lainnya",
+    price: 18000,
+    image: "/products/kaos-kaki-loreng-harpist.jpg",
+    description: "Kaos kaki motif loreng merek Harpist.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/kaos-kaki-loreng"
+  },
+  {
+    id: "99",
+    name: "Resin Epoxy 2020 + Hardener",
+    category: "perlengkapan-industri",
+    price: 650000,
+    image: "/products/resin-epoxy-2020-hardener.jpg",
+    description: "Resin epoxy tipe 2020 lengkap dengan hardener.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/resin-epoxy-2020-ultimage-plus-hardener"
+  },
+  {
+    id: "100",
+    name: "Alkohol Swab Lotus Isi 100 Pcs",
+    category: "alkes",
+    price: 550000,
+    image: "/products/alkohol-swab-lotus-isi-100-pcs.jpg",
+    description: "Alkohol swab merek Lotus isi 100 pcs per box untuk membersihkan kulit sebelum injeksi atau cek darah.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/alkohol-swab-lotus-isi-100-1731528679656753013"
+  },
+  {
+    id: "101",
+    name: "Uvex Safety Goggle Anti Fog Original",
+    category: "apd",
+    price: 265000,
+    image: "/products/uvex-safety-goggle-anti-fog-original.jpg",
+    description: "Kacamata safety goggle Uvex anti embun (anti fog) original buatan Jerman.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/uvex-safety-google-anti-fog-original"
+  },
+  {
+    id: "102",
+    name: "Thermometer Digital Anak (Ketiak)",
+    category: "alkes",
+    price: 38500,
+    image: "/products/thermometer-digital-anak-ketiak.jpg",
+    description: "Termometer digital untuk anak, digunakan di ketiak.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/thermometer-anak-digital-ketiak"
+  },
+  {
+    id: "103",
+    name: "Glassboard Papan Tulis Kaca 120 x 200 cm",
+    category: "perlengkapan-kantor",
+    price: 1850000,
+    image: "/products/glassboard-papan-tulis-kaca-120-x-200-cm.jpg",
+    description: "Papan tulis kaca (glassboard) ukuran 120 × 200 cm. Harga sudah termasuk ongkir dan pemasangan untuk wilayah Jakarta dan sekitarnya.",
+    featured: false,
+    rating: null,
+    sold: null,
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/glassboard-glass-board-papan-tulis-kaca-120-x-200"
+  }
+];
+
+// Produk yang tidak (lagi) ada di toko Tokopedia dan tidak dijual offline. Tidak ditampilkan di situs;
+// link lamanya diarahkan ke katalog kategorinya. Pindahkan kembali ke `products`
+// untuk menampilkannya lagi.
+export const archivedProducts = [
+  {
+    id: "3",
+    name: "Masker KN95 3M 9501+ Original Earloop Isi 50",
+    category: "produk-3m",
+    price: 10000,
+    image: "/products/masker-3m-9501.jpg",
+    description: "Masker KN95 3M tipe 9501+ dengan earloop, original. Dijual per pcs dari box isi 50 sachet. Nyaman dipakai sehari-hari.",
+    featured: false,
+    rating: 5.0,
+    sold: "100+",
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-kn95-3m-9501-original-earloop-isi-50-sachet-per-pcs-ed1b7"
+  },
+  {
+    id: "10",
+    name: "Masker Aura 3M 9322A+",
+    category: "produk-3m",
+    price: 280000,
+    image: "/products/masker-aura-3m-9322a.jpg",
+    description: "Masker Aura 3M tipe 9322A+ dengan katup (valve). Desain 3 panel lipat yang ergonomis, memberikan kenyamanan ekstra saat digunakan dalam waktu lama.",
+    featured: false,
+    rating: 5.0,
+    sold: "11",
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-aura-3m-9322a"
+  },
+  {
+    id: "11",
+    name: "Masker Sensi KN95 Isi 20",
+    category: "apd",
+    price: 118000,
+    image: "/products/masker-sensi-kn95.jpg",
+    description: "Masker Sensi KN95 5 layer proteksi, isi 20 pcs per box. Efektif menyaring partikel hingga 95%. Nyaman untuk digunakan sehari-hari.",
+    featured: false,
+    rating: 5.0,
+    sold: "80+",
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-kn95-isi-20"
+  },
+  {
+    id: "12",
+    name: "Masker Sensi Duckbill Isi 50",
+    category: "apd",
+    price: 133000,
+    image: "/products/masker-sensi-duckbill.jpg",
+    description: "Masker Sensi model duckbill 3D, isi 50 pcs per box. Bentuk duckbill memberikan ruang bernapas lebih lega dan tidak menempel di bibir.",
+    featured: true,
+    rating: 5.0,
+    sold: "250+",
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-duckbill-isi-50"
+  },
+  {
+    id: "13",
+    name: "Masker Sensi 3 Ply Warna Hijau Isi 50 per Box",
+    category: "apd",
+    price: 55000,
+    image: "/products/masker-sensi-3ply.jpg",
+    description: "Masker Sensi 3 ply earloop warna hijau, isi 50 pcs per box. Masker medis standar untuk perlindungan harian dari debu dan droplet.",
+    featured: false,
+    rating: null,
+    sold: "1",
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/masker-sensi-3-ply-warna-hijau-isi-50-per-box-1731584260160522101"
+  },
+  {
+    id: "28",
+    name: "Alkohol Swab Sensi @100 Pcs per Box",
+    category: "alkes",
+    price: 12500,
+    image: "/products/alkohol-swab-sensi.jpg",
+    description: "Alkohol swab merk Sensi isi 100 pcs per box. Tisu alkohol 70% isopropyl untuk desinfeksi kulit sebelum injeksi atau pengecekan gula darah.",
+    featured: true,
+    rating: 5.0,
+    sold: "100+",
+    tokopediaUrl: "https://www.tokopedia.com/mulia-berkat-alkesindo/alkohol-swab-sensi-100pcs-per-box"
   }
 ];
 
@@ -849,3 +1371,7 @@ export const productsWithSlugs = products.map(product => ({
 export const getProductBySlug = (slug) => {
   return productsWithSlugs.find(p => p.slug === slug);
 };
+
+// Archived products keep their old slug so their URLs can be redirected
+export const getArchivedProductBySlug = (slug) =>
+  archivedProducts.find(p => generateSlug(p.name) === slug);

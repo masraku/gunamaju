@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ClickTracker from "@/components/ClickTracker";
 import { company } from "@/data/company";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -10,10 +11,17 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || "https://muliaberkatalkes.com";
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0891b2",
+};
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -21,7 +29,11 @@ export const metadata = {
     default: `${company.name} - Toko & Distributor Alat Kesehatan Kelapa Gading`,
     template: `%s | ${company.name}`,
   },
-  description: "Mulia Berkat Alkesindo (MBA) adalah toko dan distributor alat kesehatan terlengkap dan terpercaya di Kelapa Gading, Jakarta Utara yang telah memiliki izin S-IPAK. Kami berkomitmen menyediakan produk medis berkualitas dengan pelayanan jujur, cepat, dan pengiriman ke seluruh Indonesia.",
+  // ~155 chars so Google shows it without truncation
+  description:
+    "Toko & distributor alat kesehatan berizin S-IPAK di Kelapa Gading, Jakarta Utara. Masker 3M, APD, alkes original. Harga offline lebih murah, kirim se-Indonesia.",
+  applicationName: company.name,
+  category: "health",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
@@ -73,7 +85,7 @@ export const metadata = {
   openGraph: {
     title: `${company.name} - Toko & Distributor Alat Kesehatan Kelapa Gading`,
     description: company.description,
-    url: baseUrl,
+    url: "/",
     siteName: company.name,
     locale: "id_ID",
     type: "website",
@@ -99,76 +111,84 @@ export const metadata = {
   },
 };
 
+const logoUrl = `${baseUrl}/assets/image/favicon.png`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalBusiness", "Store"],
+    "@id": `${baseUrl}/#business`,
+    name: company.name,
+    alternateName: ["Mulia Berkat Alkes", "MBA", "Mulia Berkat Alkesindo"],
+    description: company.description,
+    url: baseUrl,
+    logo: logoUrl,
+    image: [logoUrl, `${baseUrl}/opengraph-image`],
+    telephone: company.contact.phone,
+    email: company.contact.email,
+    hasMap: company.contact.maps,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Jl. Inspeksi Kali Sunter No.8, RT.9/RW.4",
+      addressLocality: "Kelapa Gading",
+      addressRegion: "DKI Jakarta",
+      postalCode: "14240",
+      addressCountry: "ID",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "-6.1520",
+      longitude: "106.9070",
+    },
+    areaServed: { "@type": "Country", name: "Indonesia" },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "17:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "08:00",
+        closes: "14:00",
+      },
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: company.contact.phone,
+      contactType: "customer service",
+      availableLanguage: ["Indonesian"],
+    },
+    sameAs: Object.values(company.social).filter(Boolean),
+    priceRange: "Rp",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${baseUrl}/#website`,
+    url: baseUrl,
+    name: company.name,
+    inLanguage: "id-ID",
+    publisher: { "@id": `${baseUrl}/#business` },
+  },
+];
+
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <head>
-        {/* JSON-LD Structured Data untuk Google Rich Results */}
+      <body className={plusJakarta.variable}>
+        {/* JSON-LD structured data for Google rich results (local business + site) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MedicalBusiness",
-              name: company.name,
-              alternateName: [
-                "Mulia Berkat Alkes",
-                "MBA",
-                "Mulia Berkat Alkesindo",
-              ],
-              description: company.description,
-              url: baseUrl,
-              telephone: company.contact.phone,
-              email: company.contact.email,
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Jl. Inspeksi Kali Sunter No.8, RT.9/RW.4",
-                addressLocality: "Kelapa Gading",
-                addressRegion: "DKI Jakarta",
-                postalCode: "14240",
-                addressCountry: "ID",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: "-6.1520",
-                longitude: "106.9070",
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                  ],
-                  opens: "08:00",
-                  closes: "17:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Saturday",
-                  opens: "08:00",
-                  closes: "14:00",
-                },
-              ],
-              sameAs: [
-                company.social.instagram,
-                company.social.facebook,
-                company.social.tokopedia,
-              ],
-              priceRange: "Rp",
-              image: `${baseUrl}/assets/image/logo.png`,
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className={plusJakarta.variable}>
         <Navbar />
         <main>{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <ClickTracker />
         <Analytics />
         <SpeedInsights />
       </body>

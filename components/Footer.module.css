@@ -1,25 +1,42 @@
 .footer {
   background: #0f172a;
   color: white;
-  padding: 5rem 0 0;
+  padding: 3.5rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-top: 5rem;
+  }
 }
 
 .footerGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
 }
 
 @media (min-width: 640px) {
   .footerGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Company info and map span the full row on tablets */
+  .footerSection:first-child,
+  .mapSection {
+    grid-column: 1 / -1;
   }
 }
 
 @media (min-width: 1024px) {
   .footerGrid {
-    grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr 1.5fr;
+    grid-template-columns: 1.5fr 0.8fr 0.9fr 1.2fr 1.5fr;
     gap: 2rem;
+  }
+
+  .footerSection:first-child,
+  .mapSection {
+    grid-column: auto;
   }
 }
 
@@ -51,7 +68,8 @@
 
 .socialLinks {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .socialLinks a {
@@ -101,6 +119,8 @@
 .footerContact li {
   display: flex;
   gap: 0.75rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
   margin-bottom: 1rem;
   color: #94a3b8;
   font-size: 0.9375rem;
@@ -114,8 +134,8 @@
 }
 
 .footerBottom {
-  margin-top: 4rem;
-  padding: 2rem 0;
+  margin-top: 3rem;
+  padding: 1.5rem 0 5rem; /* bottom space so the floating WhatsApp button doesn't cover the text */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   color: #64748b;
@@ -149,4 +169,16 @@
 .mapContainer {
   overflow: hidden;
   border-radius: 0.5rem;
+}
+
+.mapContainer iframe {
+  display: block;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .footerBottom {
+    padding-bottom: 2rem;
+  }
 }

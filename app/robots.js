@@ -6,9 +6,12 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        // Do NOT disallow /_next/: Googlebot needs the CSS, JS and optimized
+        // images served from there to render pages and index product photos.
+        disallow: ["/api/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }

@@ -1,0 +1,139 @@
+.explore {
+  background: var(--background-alt);
+}
+
+.b2b {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #0e7490, #0891b2);
+  color: white;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .b2b {
+    flex-direction: row;
+    align-items: center;
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+}
+
+.b2bIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.b2bText {
+  flex: 1;
+}
+
+.b2bText h2 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 0.5rem;
+}
+
+.b2bText p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.b2bBtn {
+  background: white;
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.b2bBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.articlesHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.articlesHead h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: clamp(1.375rem, 3.5vw, 1.875rem);
+}
+
+.articlesHead h2 svg {
+  color: var(--primary);
+}
+
+.articlesHead a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .articles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: white;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+.articleCard:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.articleCard span {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.articleCard h3 {
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+
+.articleCard p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

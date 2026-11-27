@@ -8,19 +8,20 @@
 
 .productsGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 560px) {
   .productsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
   .productsGrid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }
 
@@ -28,6 +29,47 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   flex-wrap: wrap;
+}
+
+/* Small phones: swipeable row instead of 8 full-height cards stacked
+   (keeps the homepage short so categories & contact are reachable). */
+@media (max-width: 559px) {
+  .productsGrid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    gap: 0.875rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin: 0 -1rem;
+    padding: 0.25rem 1rem 1rem;
+    scroll-padding: 0 1rem;
+  }
+
+  .productsGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .productsGrid > * {
+    scroll-snap-align: start;
+  }
+
+  .productsGrid > *:hover {
+    transform: none;
+  }
+
+  .swipeHint {
+    display: block;
+  }
+}
+
+.swipeHint {
+  display: none;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
 }

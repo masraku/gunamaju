@@ -22,7 +22,6 @@ export default function Navbar() {
         const sections = [
           { id: "kontak", href: "/#kontak" },
           { id: "tentang", href: "/#tentang" },
-          { id: "categories", href: "/#categories" },
           { id: "featured", href: "/katalog" },
           { id: "hero", href: "/#hero" }, // Default/Top
         ];
@@ -44,7 +43,7 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     // Initial check
     handleScroll();
 
@@ -54,15 +53,16 @@ export default function Navbar() {
   const navLinks = [
     { href: "/#hero", label: "Beranda" },
     { href: "/katalog", label: "Katalog" },
-    { href: "/#categories", label: "Kategori" },
+    { href: "/pengadaan", label: "Pengadaan" },
+    { href: "/artikel", label: "Artikel" },
     { href: "/#tentang", label: "Tentang" },
     { href: "/#kontak", label: "Kontak" },
   ];
 
   const isActive = (href) => {
-    // If we are on the Katalog page (or subpages), highlight the Katalog link
-    if (pathname.startsWith("/katalog") && href === "/katalog") {
-      return true;
+    // Highlight top-level pages (and their subpages)
+    for (const page of ["/katalog", "/pengadaan", "/artikel"]) {
+      if (href === page && pathname.startsWith(page)) return true;
     }
 
     // If we are on the Homepage
@@ -88,8 +88,8 @@ export default function Navbar() {
                 alt={company.name}
                 width={64}
                 height={64}
-                className="logo-image"
-                style={{ objectFit: "contain", width: "auto", height: "64px" }}
+                priority
+                className={styles.logoImage}
               />
             </div>
             <span className={styles.logoText}>{company.name}</span>
@@ -117,6 +117,7 @@ export default function Navbar() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
+              data-track-location="navbar"
               className={`btn btn-whatsapp ${styles.btnSm}`}
             >
               <MessageCircle size={20} />
@@ -127,13 +128,18 @@ export default function Navbar() {
           <button
             className={styles.mobileMenuBtn}
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Tutup menu" : "Buka menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        <nav className={`${styles.navMobile} ${isOpen ? styles.navMobileOpen : ""}`}>
+        <nav
+          id="mobile-nav"
+          className={`${styles.navMobile} ${isOpen ? styles.navMobileOpen : ""}`}
+        >
           {navLinks.map((link) => {
             const href =
               pathname === "/" && link.href.startsWith("/#")
@@ -155,6 +161,7 @@ export default function Navbar() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
+            data-track-location="menu_mobile"
             className={`btn btn-whatsapp ${styles.navMobileWhatsapp}`}
             onClick={() => setIsOpen(false)}
           >

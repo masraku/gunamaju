@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { company } from "@/data/company";
+import { company, marketplaces } from "@/data/company";
 import { categories } from "@/data/categories";
 import { Instagram, Facebook, MapPin, Phone, Mail, Clock, ShoppingBag } from "lucide-react";
 import styles from "./Footer.module.css";
@@ -16,9 +16,9 @@ export default function Footer() {
               <Image
                 src="/assets/image/favicon.png"
                 alt={company.name}
-                width={100}
-                height={100}
-                style={{ objectFit: "contain" }}
+                width={64}
+                height={64}
+                style={{ objectFit: "contain", flexShrink: 0 }}
               />
               <span className={styles.logoText}>{company.name}</span>
             </div>
@@ -40,44 +40,19 @@ export default function Footer() {
               >
                 <Facebook size={20} />
               </a>
-              <a
-                href={company.social.tokopedia}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Tokopedia MBA"
-                title="Tokopedia MBA"
-              >
-                <ShoppingBag size={20} />
-              </a>
-              <a
-                href={company.social.tokopedia2}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Tokopedia Joss Safety"
-                title="Tokopedia Joss Safety"
-              >
-                <ShoppingBag size={20} />
-              </a>
-              <a
-                href={company.social.shopee}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Shopee MBA"
-                title="Shopee MBA"
-                className={styles.shopeeLink}
-              >
-                <ShoppingBag size={20} />
-              </a>
-              <a
-                href={company.social.shopee2}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Shopee MBA 2"
-                title="Shopee MBA 2"
-                className={styles.shopeeLink}
-              >
-                <ShoppingBag size={20} />
-              </a>
+              {marketplaces.map((m) => (
+                <a
+                  key={m.key}
+                  href={m.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={m.label}
+                  title={m.label}
+                  className={m.type === "shopee" ? styles.shopeeLink : undefined}
+                >
+                  <ShoppingBag size={20} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -93,6 +68,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/katalog">Katalog Produk</Link>
+              </li>
+              <li>
+                <Link href="/pengadaan">Pengadaan Instansi</Link>
+              </li>
+              <li>
+                <Link href="/artikel">Artikel</Link>
               </li>
               <li>
                 <Link href="/#kontak">Kontak</Link>
@@ -155,7 +136,11 @@ export default function Footer() {
                 <span className={styles.icon}>
                   <Clock size={18} />
                 </span>
-                <span>{company.operationalHours.weekdays}</span>
+                <span>
+                  {company.operationalHours.weekdays}
+                  <br />
+                  {company.operationalHours.weekend}
+                </span>
               </li>
             </ul>
           </div>
@@ -164,16 +149,13 @@ export default function Footer() {
             <h4>Lokasi Kami</h4>
             <div className={styles.mapContainer}>
               <iframe
+                title={`Peta lokasi ${company.name}`}
                 width="100%"
                 height="200"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight="0"
-                marginWidth="0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
                 src="https://maps.google.com/maps?q=Mulia+Berkat+Alkesindo+Jl.+Inspeksi+Kali+Sunter+No.8&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                style={{ border: "1px solid #334155", borderRadius: "0.5rem" }}
               ></iframe>
-              <br />
               <small>
                 <a
                   href={company.contact.maps}

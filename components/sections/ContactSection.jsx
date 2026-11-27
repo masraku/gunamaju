@@ -1,4 +1,5 @@
 import { company, getWhatsAppLink } from "@/data/company";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import styles from "./ContactSection.module.css";
 
 export default function ContactSection() {
@@ -19,27 +20,45 @@ export default function ContactSection() {
 
             <div className={styles.contactDetails}>
               <div className={styles.contactItem}>
-                <div className={styles.contactIcon}>📍</div>
-                <div>
-                  <h4>Alamat</h4>
-                  <p>{company.contact.address}</p>
+                <div className={styles.contactIcon}>
+                  <MapPin size={22} />
                 </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.contactIcon}>📞</div>
                 <div>
-                  <h4>Telepon</h4>
-                  <p>{company.contact.phone}</p>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.contactIcon}>✉️</div>
-                <div>
-                  <h4>Email</h4>
+                  <h3 className={styles.contactLabel}>Alamat</h3>
                   <p>
-                    <a href={`mailto:${company.contact.email}`} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={company.contact.maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {company.contact.address}
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
+                  <Phone size={22} />
+                </div>
+                <div>
+                  <h3 className={styles.contactLabel}>Telepon / WhatsApp</h3>
+                  <p>
+                    <a href={`tel:${company.contact.phone.replace(/[^0-9+]/g, "")}`}>
+                      {company.contact.phone}
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
+                  <Mail size={22} />
+                </div>
+                <div>
+                  <h3 className={styles.contactLabel}>Email</h3>
+                  <p>
+                    <a href={`mailto:${company.contact.email}`}>
                       {company.contact.email}
                     </a>
                   </p>
@@ -47,9 +66,11 @@ export default function ContactSection() {
               </div>
 
               <div className={styles.contactItem}>
-                <div className={styles.contactIcon}>🕐</div>
+                <div className={styles.contactIcon}>
+                  <Clock size={22} />
+                </div>
                 <div>
-                  <h4>Jam Operasional</h4>
+                  <h3 className={styles.contactLabel}>Jam Operasional</h3>
                   <p>{company.operationalHours.weekdays}</p>
                   <p>{company.operationalHours.weekend}</p>
                 </div>
@@ -62,6 +83,7 @@ export default function ContactSection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
+              data-track-location="bagian_kontak"
               className={`btn btn-whatsapp ${styles.btnLg}`}
             >
               <svg
@@ -78,22 +100,13 @@ export default function ContactSection() {
 
           <div className={styles.contactMap}>
             <iframe
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
+              title={`Peta lokasi ${company.name} di Kelapa Gading, Jakarta Utara`}
+              className={styles.mapFrame}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
               src="https://maps.google.com/maps?q=Mulia+Berkat+Alkesindo+Jl.+Inspeksi+Kali+Sunter+No.8&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              style={{ border: "none", minHeight: "450px" }}
             ></iframe>
-            <div
-              style={{
-                padding: "1rem",
-                textAlign: "center",
-                background: "#f8fafc",
-              }}
-            >
+            <div className={styles.mapFooter}>
               <small>
                 <a
                   href={company.contact.maps}

@@ -16,10 +16,14 @@ export const company = {
     facebook: "https://www.facebook.com/mulia.b.abadi?locale=id_ID",
     tokopedia: "https://www.tokopedia.com/mulia-berkat-alkesindo",
     tokopedia2: "https://www.tokopedia.com/jossfy",
+    // Shopee: belum ditayangkan. Hapus "//" di depan baris setelah link-nya benar.
     // shopee: "https://shopee.co.id/muliaberkatalkesindo",
-    // shopee2: "https://shopee.co.id/muliaberkatalkesindo2"
+    // shopee2: "https://shopee.co.id/muliaberkatalkesindo2",
   },
   
+  // Official S-IPAK licence (PDF in /public/dokumen)
+  sipakPdf: "/dokumen/izin-s-ipak-mulia-berkat-alkesindo.pdf",
+
   operationalHours: {
     weekdays: "Senin - Jumat: 08.00 - 17.00 WIB",
     weekend: "Sabtu: 08.00 - 14.00 WIB"
@@ -49,9 +53,20 @@ export const company = {
   ]
 };
 
+// Marketplace stores. Entries whose URL is commented out / empty in `social`
+// are skipped automatically so no button ever links to "undefined".
+export const marketplaces = [
+  { key: "tokopedia", label: "Tokopedia MBA", url: company.social.tokopedia, type: "tokopedia" },
+  { key: "tokopedia2", label: "Tokopedia Joss Safety", url: company.social.tokopedia2, type: "tokopedia" },
+  { key: "shopee", label: "Shopee MBA", url: company.social.shopee, type: "shopee" },
+  { key: "shopee2", label: "Shopee MBA 2", url: company.social.shopee2, type: "shopee" },
+].filter((m) => Boolean(m.url));
+
 export const getWhatsAppLink = (message = "") => {
   const encodedMessage = encodeURIComponent(message);
-  return `https://wa.me/${company.contact.whatsapp}${message ? `?text=${encodedMessage}` : ''}`;
+  // wa.me expects digits only (no "+", spaces or dashes)
+  const number = company.contact.whatsapp.replace(/\D/g, "");
+  return `https://wa.me/${number}${message ? `?text=${encodedMessage}` : ''}`;
 };
 
 export const getProductWhatsAppLink = (productName) => {

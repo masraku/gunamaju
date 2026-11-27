@@ -26,6 +26,9 @@ export default function FeaturedProducts() {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+        <p className={styles.swipeHint} aria-hidden="true">
+          Geser untuk melihat produk lainnya →
+        </p>
 
         <div className={styles.viewAll}>
           <Link href="/katalog" className="btn btn-secondary">
